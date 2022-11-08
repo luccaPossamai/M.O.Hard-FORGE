@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "mohard:item/magic_boots",
+    "layer1": "mohard:item/magic_boots_overlay"
+  }
+}

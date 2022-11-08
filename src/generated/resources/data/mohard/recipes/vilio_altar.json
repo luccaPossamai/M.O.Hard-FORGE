@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "D": {
+      "item": "minecraft:polished_deepslate"
+    },
+    "E": {
+      "tag": "forge:essences/essence"
+    },
+    "V": {
+      "item": "mohard:vilio_ingot"
+    }
+  },
+  "pattern": [
+    " E ",
+    "VVV",
+    "DDD"
+  ],
+  "result": {
+    "item": "mohard:vilio_altar"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "B": {
+      "item": "minecraft:basalt"
+    },
+    "H": {
+      "item": "mohard:heart_of_the_glowing_depths"
+    },
+    "M": {
+      "item": "minecraft:magma_block"
+    },
+    "N": {
+      "item": "minecraft:netherite_scrap"
+    }
+  },
+  "pattern": [
+    "BNB",
+    "MHM",
+    "BNB"
+  ],
+  "result": {
+    "item": "mohard:deep_nether_petrified_tome"
+  }
+}

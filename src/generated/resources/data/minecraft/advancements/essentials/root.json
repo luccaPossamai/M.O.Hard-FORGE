@@ -1,0 +1,35 @@
+{
+  "criteria": {
+    "get_essence": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "forge:essences/essence"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "background": "mohard:textures/gui/advancements/backgrounds/deepslate.png",
+    "description": {
+      "translate": "advancements.essentials.root.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "mohard:zombie_essence"
+    },
+    "show_toast": false,
+    "title": {
+      "translate": "advancements.essentials.root.title"
+    }
+  },
+  "requirements": [
+    [
+      "get_essence"
+    ]
+  ]
+}

@@ -1,0 +1,16 @@
+// 1.19.2	2022-10-26T21:19:18.3348991	Block States: mohard
+918e3a6cb19a3733f2e33652c6eaccf644baf267 assets/mohard/blockstates/deepslate_vilio_ore.json
+343484aa78ef83a0a9ffb7b58cc2c4f3dce4c290 assets/mohard/blockstates/essence_exchanger.json
+18530faa11e28f578ba212a96e3de85bf98976fa assets/mohard/blockstates/tender_obsidian.json
+e56fb5f6cbad5bd3f79dae654b6122ef18e48704 assets/mohard/blockstates/vilio_altar.json
+edaea2c722b29f07f3c83b5676eb0588047edc64 assets/mohard/blockstates/vilio_block.json
+90fb8b1691f494fcc5331bdc2e66e4b15d831f0b assets/mohard/blockstates/vilio_ore.json
+33a7a6197398350d188de661eea0141336807e2f assets/mohard/models/block/deepslate_vilio_ore.json
+19f47c8bb7c2f3aa7bc62d8230cdfa4f04231fbb assets/mohard/models/block/essence_exchanger_0.json
+b0c327118a2e6dd610a375a05dec04558cda7602 assets/mohard/models/block/essence_exchanger_1.json
+d81ae63f0f54d8bdbad0a3489860bdafe0ef6d66 assets/mohard/models/block/essence_exchanger_2.json
+8c3e1e21653a68e6ad2d84c2b80c2e05c25a42b6 assets/mohard/models/block/essence_exchanger_3.json
+9e66039c09a5af392033e220a6b6f8ad0c94dd4f assets/mohard/models/block/tender_obsidian.json
+af7ea133628f7a809e0fa2a88df9a37d5988481e assets/mohard/models/block/vilio_altar.json
+29dacd56c6f0854ed9c58046a72c20474c7b04e7 assets/mohard/models/block/vilio_block.json
+6f9818b22d951814426fdfc971ff24573e59433b assets/mohard/models/block/vilio_ore.json

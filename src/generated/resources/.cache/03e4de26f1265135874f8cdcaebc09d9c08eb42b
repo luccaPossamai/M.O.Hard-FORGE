@@ -1,0 +1,7 @@
+// 1.19.2	2022-11-07T20:39:29.855497	Tags for minecraft:item
+f680db192e7c16b5663540c7764d80e3a5779b36 data/forge/tags/items/essences/essence.json
+a337b38deca05f0d9aca29b453f1fafc1a4fae51 data/forge/tags/items/ingots.json
+67e31fa22b1dd042623e7ac6f5bd40e65d30a168 data/forge/tags/items/throwable_items.json
+57bb7f941db0b2aed3119a88b1cdbbfd3b2981ed data/forge/tags/items/vilio_tools.json
+ba0a61e644d349cc10f864ac455127fc7b38972c data/minecraft/tags/items/creeper_drop_music_discs.json
+ba0a61e644d349cc10f864ac455127fc7b38972c data/minecraft/tags/items/music_discs.json

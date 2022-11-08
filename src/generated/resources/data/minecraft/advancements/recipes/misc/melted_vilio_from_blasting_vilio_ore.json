@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:melted_vilio_from_blasting_vilio_ore"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_vilio_ore": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "mohard:vilio_ore"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_vilio_ore",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:melted_vilio_from_blasting_vilio_ore"
+    ]
+  }
+}

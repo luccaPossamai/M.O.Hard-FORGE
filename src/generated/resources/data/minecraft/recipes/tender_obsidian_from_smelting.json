@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "cookingtime": 6000,
+  "experience": 5.0,
+  "ingredient": {
+    "item": "minecraft:obsidian"
+  },
+  "result": "mohard:tender_obsidian"
+}

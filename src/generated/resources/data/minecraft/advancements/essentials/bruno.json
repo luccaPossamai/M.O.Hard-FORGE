@@ -1,0 +1,37 @@
+{
+  "parent": "minecraft:essentials/root",
+  "criteria": {
+    "bruno": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "mohard:bruno_essence"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.essentials.bruno.description"
+    },
+    "frame": "challenge",
+    "hidden": true,
+    "icon": {
+      "item": "mohard:bruno_essence"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.essentials.bruno.title"
+    }
+  },
+  "requirements": [
+    [
+      "bruno"
+    ]
+  ]
+}

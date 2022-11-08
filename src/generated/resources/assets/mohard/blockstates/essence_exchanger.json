@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "exchange_charges=0": {
+      "model": "mohard:block/essence_exchanger_0"
+    },
+    "exchange_charges=1": {
+      "model": "mohard:block/essence_exchanger_1"
+    },
+    "exchange_charges=2": {
+      "model": "mohard:block/essence_exchanger_2"
+    },
+    "exchange_charges=3": {
+      "model": "mohard:block/essence_exchanger_3"
+    }
+  }
+}

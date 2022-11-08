@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "B": {
+      "item": "minecraft:blue_dye"
+    },
+    "L": {
+      "item": "minecraft:rabbit_hide"
+    },
+    "N": {
+      "item": "mohard:nomads_banner_pattern"
+    },
+    "P": {
+      "item": "minecraft:purple_dye"
+    },
+    "S": {
+      "item": "minecraft:string"
+    }
+  },
+  "pattern": [
+    "SLS",
+    "BNP",
+    "LLL"
+  ],
+  "result": {
+    "item": "mohard:essence_bundle"
+  }
+}

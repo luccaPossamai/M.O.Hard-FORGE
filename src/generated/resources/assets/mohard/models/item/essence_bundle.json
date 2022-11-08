@@ -1,0 +1,14 @@
+{
+  "parent": "minecraft:item/generated",
+  "overrides": [
+    {
+      "model": "mohard:item/essence_bundle_filled",
+      "predicate": {
+        "mohard:filled": 1.0E-7
+      }
+    }
+  ],
+  "textures": {
+    "layer0": "mohard:item/essence_bundle"
+  }
+}

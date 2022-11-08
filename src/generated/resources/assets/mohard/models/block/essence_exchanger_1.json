@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "mohard:block/essence_exchanger_bottom",
+    "side": "mohard:block/essence_exchanger_side_1",
+    "top": "mohard:block/essence_exchanger_top"
+  }
+}
