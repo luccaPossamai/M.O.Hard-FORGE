@@ -59,7 +59,7 @@ public class ModGlowParticle extends TextureSheetParticle {
         public Particle createParticle(SimpleParticleType p_172249_, ClientLevel p_172250_, double p_172251_, double p_172252_, double p_172253_, double p_172254_, double p_172255_, double p_172256_) {
             ModGlowParticle glowparticle = new ModGlowParticle(p_172250_, p_172251_, p_172252_, p_172253_, 0.0D, 0.0D, 0.0D, this.sprite);
             glowparticle.setColor( (136.3F / 255F), (70.5F / 255F), (140.1F / 255F));
-            glowparticle.setParticleSpeed(p_172254_ * 0.01D / 2.0D, p_172255_ * 0.01D, p_172256_ * 0.01D / 2.0D);
+            glowparticle.setParticleSpeed(p_172254_ * SPEED_FACTOR / 2.0D, p_172255_ * SPEED_FACTOR, p_172256_ * SPEED_FACTOR / 2.0D);
             glowparticle.setLifetime(p_172250_.random.nextInt(30) + 10);
             return glowparticle;
         }
