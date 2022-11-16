@@ -62,7 +62,6 @@ public final class DataGenerators {
         gen.addProvider(true, new ModBannerPatternTagsProvider(gen, existingFileHelper));
         gen.addProvider(true, blockTags);
         gen.addProvider(true, new ModItemTagsProvider(gen, blockTags, existingFileHelper));
-        gen.addProvider(true, new ModStructureTagsProvider(gen, existingFileHelper));
         gen.addProvider(true, new ModBiomeTagsProvider(gen, existingFileHelper));
 }
 

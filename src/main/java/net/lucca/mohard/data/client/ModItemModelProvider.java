@@ -22,24 +22,17 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-
         ModelFile itemGenerated = getExistingFile(mcLoc("item/generated"));
         ModelFile itemHandHeld = getExistingFile(mcLoc("item/handheld"));
         ModelFile itemSpawnEgg = getExistingFile(mcLoc("item/template_spawn_egg"));
-
         withExistingParent("vilio_altar", new ResourceLocation(ModMain.MODID, "block/vilio_altar"));
         withExistingParent("essence_exchanger", new ResourceLocation(ModMain.MODID, "block/essence_exchanger_0"));
         withExistingParent("vilio_ore", mcLoc("mohard:block/vilio_ore"));
         withExistingParent("deepslate_vilio_ore", mcLoc("mohard:block/deepslate_vilio_ore"));
         withExistingParent("vilio_block", mcLoc("mohard:block/vilio_block"));
         withExistingParent("tender_obsidian", mcLoc("mohard:block/tender_obsidian"));
-
-
-
         ModelFile bundleFilled = getBuilder("essence_bundle_filled").parent(itemGenerated).texture("layer0","item/essence_bundle_filled");
         getBuilder("essence_bundle").texture("layer0", "item/essence_bundle").parent(itemGenerated).override().predicate(new ResourceLocation(ModMain.MODID, "filled"), 0.0000001F).model(bundleFilled);
-
-
         ModelFile dashArtifact1 = getBuilder("vilio_idol_1").parent(itemGenerated).texture("layer0","item/vilio_idol_1");
         ModelFile dashArtifact2 = getBuilder("vilio_idol_2").parent(itemGenerated).texture("layer0","item/vilio_idol_2");
         getBuilder("vilio_idol").texture("layer0", "item/vilio_idol_0").parent(itemGenerated)
@@ -63,7 +56,6 @@ public class ModItemModelProvider extends ItemModelProvider {
         builder2(itemGenerated, "magic_leggings", "magic_leggings", "magic_leggings_overlay");
         builder2(itemGenerated, "magic_chestplate", "magic_chestplate", "magic_chestplate_overlay");
         builder2(itemGenerated, "magic_helmet", "magic_helmet", "magic_helmet_overlay");
-
         builder(itemGenerated, "raw_vilio", "raw_vilio");
         builder(itemGenerated, "melted_vilio", "melted_vilio");
         builder(itemGenerated, "vilio_ingot", "vilio_ingot");
@@ -72,23 +64,16 @@ public class ModItemModelProvider extends ItemModelProvider {
         builder(itemHandHeld,"vilio_hoe", "vilio_hoe");
         builder(itemHandHeld,"vilio_shovel", "vilio_shovel");
         builder(itemHandHeld,"vilio_sword", "vilio_sword");
-
         builder(itemHandHeld,"floyd_dagger", "floyd_dagger");
         builder(itemHandHeld,"algid_axe", "algid_axe");
         builder(itemGenerated,"deep_nether_petrified_tome", "deep_nether_petrified_tome");
         builder(itemGenerated, "heart_of_the_glowing_depths", "heart_of_the_glowing_depths");
-
-        builder(itemGenerated, "jetpack","jetpack");
         builder(itemHandHeld, "wand", "wand");
-
         builder2(itemSpawnEgg, "essence", "essence_1", "essence_2");
-
         builder(itemGenerated, "easter_essence", "easter_essence");
-
         builder(itemGenerated, "cold_charge", "cold_charge");
-        //essence texure
-
         EssenceDataHelper.printEssence();
+
 
         for(RegistryObject<Item> en: ModEssences.ESSENCE_ITEMS.getEntries()) {
             if (en.get() instanceof EssenceItem essence) {

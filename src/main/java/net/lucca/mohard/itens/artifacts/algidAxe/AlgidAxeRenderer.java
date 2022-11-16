@@ -11,7 +11,6 @@ import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.client.renderer.texture.TextureAtlas;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
-import net.minecraft.world.entity.projectile.ItemSupplier;
 import org.jetbrains.annotations.NotNull;
 
 public class AlgidAxeRenderer extends EntityRenderer<ThrownAlgidAxe> {
@@ -33,7 +32,7 @@ public class AlgidAxeRenderer extends EntityRenderer<ThrownAlgidAxe> {
             p_116088_.pushPose();
             p_116088_.scale(this.scale, this.scale, this.scale);
             p_116088_.mulPose(Vector3f.YP.rotationDegrees(Mth.lerp(p_116087_, p_116085_.yRotO, p_116085_.getYRot()) - 90.0F));
-            if(!p_116085_.inGround()){
+            if(!p_116085_.inGround() && !p_116085_.isNoGravity()){
                 p_116088_.mulPose(Vector3f.ZP.rotationDegrees(Mth.lerp(p_116087_, p_116085_.xRotO, p_116085_.getXRot()) - rotation));
                 p_116085_.setLastRotation(rotation);
             } else {

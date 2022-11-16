@@ -9,29 +9,10 @@
 
   "_comment2": "ENTITIES NAME",
 
-  "entity.mohard.golden_armored_pillager": "Golden Armored Pillager",
-  "entity.mohard.diamond_armored_pillager": "Diamond Armored Pillager",
-  "entity.mohard.golden_armored_vindicator": "Golden Armored Vindicator",
-  "entity.mohard.diamond_armored_vindicator": "Diamond Armored Vindicator",
   "entity.mohard.ice_isolator": "Ice Isolator",
-  "entity.mohard.mooer": "Mooer",
-  "entity.mohard.gilded_mooer": "Gilded Mooer",
-  "entity.mohard.mooshroom_mooer": "Mooshroom Mooer",
   "entity.mohard.spiritual_nomad": "Spiritual Nomad",
-  "entity.mohard.gaspi_nomad": "Gaspi",
-  "entity.mohard.cuspile_nomad": "Cuspile",
-  "entity.mohard.saatpon_nomad": "Saatpon",
-  "entity.mohard.aan_nomad": "Aan",
-  "entity.mohard.ho_cinzal_nomad": "Ho Cinzal",
-  "entity.mohard.cinvet_nomad": "Cinvet",
-  "entity.mohard.corrupted_player": "Corrupted Player",
-  "entity.mohard.corrupter": "Corrupter",
-  "entity.mohard.dummy": "Dummy",
   "entity.mohard.algid_axe": "Algid Axe",
-
-
-  "_comment3": "PROFESSIONS",
-
+  "entity.mohard.cold_fireball": "Cold Fireball",
 
   "_comment4": "ATTRIBUTES",
 
@@ -43,7 +24,6 @@
   "attribute.name.additional.raw_armor": "Raw Armor",
   "attribute.name.additional.physical_damage": "Physical Damage",
   "attribute.name.additional.magic_resistance": "Magic Resistance",
-  "attribute.name.additional.max_mana": "Max Mana",
 
 
   "_comment5": "NOTATIONS",
@@ -60,21 +40,6 @@
   "essence.description.magic_damage": "Magic Damage",
   "essence.description.unactive": "Unactive",
   "essence.description.shift": "Hold [SHIFT] to show more",
-  "essence.syntonizer.hability": "Hability",
-  "essence.syntonizer.cooldown": "Cooldown",
-  "essence.syntonizer.duration": "Duration",
-  "essence.syntonizer.essences": "Essences",
-  "essence.syntonizer.tier.none": "None",
-  "essence.syntonizer.tier.wood": "Wood",
-  "essence.syntonizer.tier.stone": "Stone",
-  "essence.syntonizer.tier.copper": "Copper",
-  "essence.syntonizer.tier.iron": "Iron",
-  "essence.syntonizer.tier.lapis": "Lapis",
-  "essence.syntonizer.tier.redstone": "Redstone",
-  "essence.syntonizer.tier.gold": "Gold",
-  "essence.syntonizer.tier.diamond": "Diamond",
-  "essence.syntonizer.tier.netherite": "Netherite",
-  "essence.syntonizer.tier.vilio": "Vilio",
   "artifact.description.magic_multiplier": "Magic Multiplier",
   "artifact.description.melee_multiplier": "Melee Multiplier",
   "artifact.description.ranged_multiplier": "Ranged Multiplier",
@@ -82,16 +47,6 @@
   "artifact.description.cooldown": "Cooldown",
   "artifact.scroll.description.effects": "Effects",
   "holliday.message" : "A misterious entity spawned at %1$s, %2$s, %3$s",
-
-  "quest.gather": "Gathering Quest ",
-  "quest.killing": "Killing Quest",
-  "quest.gather_killing": "Gather n' Killing Quest",
-  "quest.rewards": "Reward(s)",
-  "quest.blocked": "Quest Blocked",
-  "quest.request.gather": "Gather",
-  "quest.request.kill": "Kill",
-
-  "quester.quests": "Quests",
 
 
   "_comment6": "BLOCKS",
@@ -159,26 +114,19 @@
   "item.mohard.tender_obsidian_leggings": "Tender Obsidian Leggings",
   "item.mohard.tender_obsidian_chestplate": "Tender Obsidian Chestplate",
   "item.mohard.tender_obsidian_helmet": "Tender Obsidian Helmet",
-  "item.mohard.jetpack": "JetPack",
-
   "item.mohard.vilio_ingot": "Vilio Ingot",
   "item.mohard.raw_vilio": "Raw Vilio",
   "item.mohard.melted_vilio": "Melted Vilio",
-
   "item.mohard.vilio_axe": "Vilio Axe",
   "item.mohard.vilio_shovel": "Vilio Shovel",
   "item.mohard.vilio_pickaxe": "Vilio Pickaxe",
   "item.mohard.vilio_hoe": "Vilio Hoe",
   "item.mohard.vilio_sword": "Vilio Sword",
   "item.mohard.vilio_horse_armor": "Vilio Horse Armor",
-  "item.mohard.essence_syntonizer": "Essence Syntonizer",
-
   "item.mohard.music_disc_breathe": "Music Disc",
   "item.mohard.music_disc_breathe.desc": "LPcaMors - breathe",
   "item.mohard.disc_fragment_breathe": "Disc Fragment",
   "item.mohard.disc_fragment_breathe.desc": "LPcaMors - breathe",
-  "item.mohard.corrupted_berry": "Corrupted Berry",
-  "item.mohard.dense_spruce_sapling": "Dense Spruce Sapling",
   "item.mohard.essence_bundle": "Essence Bundle",
 
 
@@ -194,55 +142,32 @@
   "enchantment.mohard.half_bane" : "Half Bane",
   "enchantment.mohard.double_bane" : "Double Bane",
 
-  "stone_wisdom.name": "Stone Wisdom",
-  "glass_beast.name": "Glass Beast",
-  "contemplation_scream.name": "Contemplation Scream",
-  "chick_evasion.name": "Chick Evasion",
-  "autocide.name": "Autocide",
-  "dummy_support.name": "Dummy Support",
-  "cursed_friendship.name": "Cursed Friendship",
-  "nakas_mastery.name": "Naka's Mastery",
-
-
   "_comment9": "EFFECTS",
 
   "effect.mohard.incineration": "Incineration",
-  "effect.mohard.stun": "Stun",
-  "effect.mohard.teleportation": "Teleportation",
-  "effect.mohard.corruption": "Corruption",
-  "effect.mohard.mana_regeneration": "Mana Regeneration",
   "effect.mohard.vanish": "Vanish",
-
-
-  "_comment9.1": "POTION EFFECTS",
-
-  "item.minecraft.potion.effect.corruption": "Potion of Corruption",
-  "item.minecraft.splash_potion.effect.corruption": "Splash Potion of Corruption",
-  "item.minecraft.lingering_potion.effect.corruption": "Lingering Potion of Corruption",
-  "item.minecraft.tipped_arrow.effect.corruption": "Potion of Corruption",
-  "item.minecraft.potion.effect.mana_regeneration": "Potion of Mana",
-  "item.minecraft.splash_potion.effect.mana_regeneration": "Splash Potion of Mana",
-  "item.minecraft.lingering_potion.effect.mana_regeneration": "Lingering Potion of Mana",
-  "item.minecraft.tipped_arrow.effect.mana_regeneration": "Potion of Mana",
 
 
   "_comment10": "DEATH MESSAGES",
 
-  "death.attack.directMagic": "%1$s felt the real magic",
-  "death.attack.directMagic.player": "%2$s showed the true magic to %1$s",
-  "death.attack.directMagic.algidAxe": "%2$s's Algid Axe showed the true magic to %1$s",
+  "death.attack.direct_magic": "%1$s felt the real magic",
+  "death.attack.direct_magic.player": "%1$s felt the %2$s's true magic",
+  "death.attack.direct_magic.algid_axe": "%2$s's Algid Axe showed the true magic to %1$s",
+  "death.attack.direct_magic.heart_of_the_glowing_depths": "%1$s was burned by %1$s's glowing depths sorcery",
+  "death.attack.direct_magic.floyd_dagger": "%1$s was stabbed by %2$s",
+  "death.attack.direct_magic.health_discharge": "%2$s was smothered by %1$s's resistance",
 
   "_comment10.1": "SUBTITLES",
 
-  "mohard.subtitle.no_damage": "All damage blocked",
-  "mohard.subtitle.low_damage": "Portion of damage blocked",
   "mohard.subtitle.hability_sound": "Weird Noise",
 
   "comment11": "BINDINGS",
 
-  "mana_charge.name":"Mana Charge",
-  "mana_spare.name":"Mana Spare",
   "reflection.name":"Reflection",
+  "life_steal.name":"Life Steal",
+  "regeneration.name":"Regeneration",
+  "health_discharge.name":"Health Discharge",
+  "ghost_recovery.name":"Ghost Recovery",
 
   "comment12": "SERVER MESSAGES",
 
@@ -335,16 +260,11 @@
   "item.mohard.allay_essence": "Allay Essence",
   "item.mohard.frog_essence": "Frog Essence",
 
-  "item.mohard.golden_armored_pillager_essence": "Golden Armored Pillager Essence",
-  "item.mohard.diamond_armored_pillager_essence": "Diamond Armored Pillager Essence",
-  "item.mohard.golden_armored_vindicator_essence": "Golden Armored Vindicator Essence",
-  "item.mohard.diamond_armored_vindicator_essence": "Diamond Armored Vindicator Essence",
-  "item.mohard.enchanter_essence": "Enchanter Essence",
-  "item.mohard.mooer_essence": "Mooer Essence",
-  "item.mohard.gilded_mooer_essence": "Gilded Mooer Essence",
-  "item.mohard.mooshroom_mooer_essence": "Mooshroom Mooer Essence",
   "item.mohard.ice_isolator_essence": "Ice Isolator Essence",
   "item.mohard.bruno_essence": "Bruno's Essence",
   "item.mohard.blue_axolotl_essence": "Blue Axolotl Essence",
-  "item.mohard.easter_essence": "Easter Essence"
+  "item.mohard.easter_essence": "Easter Essence",
+  "item.mohard.wither_essence": "Wither Essence",
+  "item.mohard.ender_dragon_essence": "Ender Dragon Essence",
+  "item.mohard.warden_essence": "Warden Essence"
 }

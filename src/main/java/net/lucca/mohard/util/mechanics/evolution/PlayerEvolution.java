@@ -33,8 +33,8 @@ public class PlayerEvolution {
         double health = player.getMaxHealth();
         List<Attribute> attributes = Methods.getAttributes();
         Map<Attribute, Double> statsForPlayer = attributes.stream().collect(Collectors.toMap(attribute -> attribute, Attribute::getDefaultValue));
-
-        statsForPlayer.put(Attributes.MOVEMENT_SPEED, 0.10000000149011612);
+        double velocidade = 0.1D;
+        statsForPlayer.put(Attributes.MOVEMENT_SPEED, velocidade);
 
         updateInsideItems(lista, player);
         EssenceBindingHelper.updateEntail(lista, player);
@@ -51,13 +51,11 @@ public class PlayerEvolution {
                     RangedAttribute att = (RangedAttribute) attribute;
                     double valor = essenceStats.get(att) + statsForPlayer.get(attribute);
                     statsForPlayer.put(attribute, Math.min(Math.max(att.getMinValue(), valor), att.getMaxValue()));
-                    if (att.equals(ModAttributes.AGILITY)) {
-                        double velocidade = statsForPlayer.get(Attributes.MOVEMENT_SPEED);
-                        statsForPlayer.put(Attributes.MOVEMENT_SPEED, velocidade + (velocidade * valor / 125));
-                    }
+
                 }
             }
         }
+        statsForPlayer.put(Attributes.MOVEMENT_SPEED, velocidade + (velocidade * statsForPlayer.get(ModAttributes.AGILITY) / 125));
 
         if(!player.isLocalPlayer()) {
             statsForPlayer.forEach((attribute, aDouble) -> player.getAttribute(attribute).setBaseValue(aDouble));

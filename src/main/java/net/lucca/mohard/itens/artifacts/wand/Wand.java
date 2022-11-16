@@ -1,6 +1,7 @@
 package net.lucca.mohard.itens.artifacts.wand;
 
-import net.lucca.mohard.entities.etc.ColdFireball;
+import net.lucca.mohard.entities.coldfireball.ColdFireball;
+import net.lucca.mohard.entities.amethystBoulder.AmethystBoulder;
 import net.lucca.mohard.init.ModAttributes;
 import net.lucca.mohard.itens.artifacts.GenericArtifact;
 import net.minecraft.util.Mth;
@@ -11,6 +12,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.Random;
 
 public class Wand extends GenericArtifact {
 
@@ -40,14 +43,20 @@ public class Wand extends GenericArtifact {
             this.generateCooldown(player, itemStack);
             this.hurtItem(player, itemStack);
             double damage = player.getAttributeValue(ModAttributes.MAGIC_DAMAGE) * ((GenericArtifact) itemStack.getItem()).getMagicMultiplier(player, itemStack);
-            float x = -Mth.sin(player.getYRot() * ((float) Math.PI / 180F)) * Mth.cos(player.getXRot() * ((float) Math.PI / 180F));
-            float y = -Mth.sin((player.getXRot()) * ((float) Math.PI / 180F));
-            float z = Mth.cos(player.getYRot() * ((float) Math.PI / 180F)) * Mth.cos(player.getXRot() * ((float) Math.PI / 180F));
-            ColdFireball smallfireball = new ColdFireball(player.level, player, x, y, z, damage);
-            smallfireball.setPos(smallfireball.getX(), player.getY(0.5D) + 0.5D, smallfireball.getZ());
-            player.level.addFreshEntity(smallfireball);
+            if(player.isShiftKeyDown()){
+                AmethystBoulder slimeBall = new AmethystBoulder(level, player, damage);
+                slimeBall.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 0.10F, 1.0F);
+                slimeBall.setSize(new Random().nextInt(3) + 1);
+                player.level.addFreshEntity(slimeBall);
+            } else {
+                float x = -Mth.sin(player.getYRot() * ((float) Math.PI / 180F)) * Mth.cos(player.getXRot() * ((float) Math.PI / 180F));
+                float y = -Mth.sin((player.getXRot()) * ((float) Math.PI / 180F));
+                float z = Mth.cos(player.getYRot() * ((float) Math.PI / 180F)) * Mth.cos(player.getXRot() * ((float) Math.PI / 180F));
+                ColdFireball smallfireball = new ColdFireball(player.level, player, x, y, z, damage);
+                smallfireball.setPos(smallfireball.getX(), player.getY(0.5D) + 0.5D, smallfireball.getZ());
+                player.level.addFreshEntity(smallfireball);
+            }
             return InteractionResultHolder.consume(itemStack);
-
         }
         return super.use(level, player, hand);
     }

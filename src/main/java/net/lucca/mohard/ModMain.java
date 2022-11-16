@@ -5,7 +5,6 @@ import net.lucca.mohard.block.altar.appearence.AltarTileEntityRenderer;
 import net.lucca.mohard.config.ModClientConfig;
 import net.lucca.mohard.config.ModServerConfig;
 import net.lucca.mohard.enchantments.ModEnchantmentCategory;
-import net.lucca.mohard.entities.EntitiesRenderer;
 import net.lucca.mohard.gui.altar.AltarScreen;
 import net.lucca.mohard.gui.essenceExchanger.EssenceExchangerScreen;
 import net.lucca.mohard.init.*;
@@ -45,9 +44,7 @@ public class ModMain
         ModEntityTypes.ENTITIES.register(eventBus);
         ModBlocks.BLOCOS.register(eventBus);
         ModItems.ITEMS.register(eventBus);
-        ModLootTables.register();
         ModBlockStateProperties.register();
-        ModPotions.register(eventBus);
         ModSounds.register(eventBus);
         ModModelLayers.register();
         ModParticles.register(eventBus);
@@ -57,10 +54,6 @@ public class ModMain
         ModEnchantments.register(eventBus);
         ModTileEntityTypes.register(eventBus);
         ModItemGroups.register();
-        ModStructurePieces.register(eventBus);
-        ModStructureType.register(eventBus);
-        ModStructures.register(eventBus);
-        ModStructureSets.register(eventBus);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
         MinecraftForge.EVENT_BUS.register(this);
@@ -78,13 +71,12 @@ public class ModMain
         MenuScreens.register(ModContainers.ALTAR.get(), AltarScreen::new);
         MenuScreens.register(ModContainers.ESSENCE_EXCHANGER.get(), EssenceExchangerScreen::new);
         BlockEntityRenderers.register(ModTileEntityTypes.ALTAR.get(), AltarTileEntityRenderer::new);
-        ModPotions.createPotionRecipes();
     }
 
     private void doClientStuff(final FMLClientSetupEvent event) {
         BaseNetwork.init();
-        EntitiesRenderer.layersRegistry();
-        EntitiesRenderer.registryEntityRenderers();
+        //EntitiesRenderer.layersRegistry();
+        //EntitiesRenderer.registryEntityRenderers();
     }
 
 

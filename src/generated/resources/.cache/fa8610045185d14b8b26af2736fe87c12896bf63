@@ -1,4 +1,4 @@
-// 1.19.2	2022-11-07T20:39:29.8704889	Item Models: mohard
+// 1.19.2	2022-11-08T12:45:15.0505305	Item Models: mohard
 778c4d9cae1839ffb1b5fdcf63fc0a633871d7ad assets/mohard/models/item/algid_axe.json
 fb5a64ebba5fbcf29308e616ff6aeec01b9d4352 assets/mohard/models/item/axolotl_essence.json
 fb5a64ebba5fbcf29308e616ff6aeec01b9d4352 assets/mohard/models/item/bat_essence.json
@@ -46,7 +46,6 @@ fb5a64ebba5fbcf29308e616ff6aeec01b9d4352 assets/mohard/models/item/husk_essence.
 fb5a64ebba5fbcf29308e616ff6aeec01b9d4352 assets/mohard/models/item/ice_isolator_essence.json
 fb5a64ebba5fbcf29308e616ff6aeec01b9d4352 assets/mohard/models/item/illusioner_essence.json
 fb5a64ebba5fbcf29308e616ff6aeec01b9d4352 assets/mohard/models/item/iron_golem_essence.json
-4f09c129c72b44a1f5f1fecce375d1fe1ab2ae6b assets/mohard/models/item/jetpack.json
 fb5a64ebba5fbcf29308e616ff6aeec01b9d4352 assets/mohard/models/item/llama_essence.json
 30af66ee2b0f62afcc24bfc57869846ef439afee assets/mohard/models/item/magic_boots.json
 5c0aa54514ead68a85001aab81c97c603c199d63 assets/mohard/models/item/magic_chestplate.json

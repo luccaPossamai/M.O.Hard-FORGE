@@ -1,6 +1,4 @@
-// 1.19.2	2022-11-07T18:17:07.1668491	LootTables
-00ab09e40f0661722a683b3f502812eaed86f750 data/minecraft/loot_tables/corrupter_wagon.json
-a99f081fd0061b165fe9b760e798dab4e83515bf data/minecraft/loot_tables/ice_isolator_house.json
+// 1.19.2	2022-11-10T18:21:25.9818756	LootTables
 30fbc6828844e1d2ef77e4816503155d1dc53e46 data/mohard/loot_tables/blocks/deepslate_vilio_ore.json
 b5af314b6f90260086aaa0e2606e60fd15382b78 data/mohard/loot_tables/blocks/essence_exchanger.json
 ba5c832f0a74ebf923d891e7a400ef76576d52a1 data/mohard/loot_tables/blocks/tender_obsidian.json

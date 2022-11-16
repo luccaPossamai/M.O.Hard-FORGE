@@ -97,25 +97,5 @@ public class ModTags {
         }
     }
 
-    public static final class Structures{
-
-        public static final TagKey<Structure> ON_ISOLATOR_EXPLORER_MAPS = mod("on_isolator_explorer_maps");
-        public static final TagKey<Structure> ON_CORRUPTER_WAGON_EXPLORER_MAPS = mod("on_corrupter_wagon_explorer_maps");
-
-
-        private static TagKey<Structure> forge(String path){
-            return create(new ResourceLocation("forge" ,path));
-
-
-        }
-
-        private static TagKey<Structure> mod(String path){
-            return create(new ResourceLocation(ModMain.MODID ,path));
-        }
-
-        private static TagKey<Structure> create(ResourceLocation p_207631_) {
-            return TagKey.create(Registry.STRUCTURE_REGISTRY, p_207631_);
-        }
-    }
 
 }

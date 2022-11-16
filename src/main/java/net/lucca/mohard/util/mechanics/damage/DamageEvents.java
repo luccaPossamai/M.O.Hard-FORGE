@@ -109,13 +109,15 @@ public class DamageEvents {
     public static void damageDodge(LivingAttackEvent event){
         LivingEntity livingEntity = event.getEntity();
         Entity entity = event.getSource().getEntity();
-        DamageSource damageSource = event.getSource();
-        if(damageSource.isBypassInvul()) return;
-        boolean flag = entity != null && (entity instanceof LivingEntity || (entity instanceof Projectile projectile && projectile.getOwner() instanceof LivingEntity));
-        double toDodge = (event.getAmount() / (Math.max(1, livingEntity.getAttributeValue(ModAttributes.AGILITY)) * 0.02 * (flag ? 1 : 10)));
-        if(toDodge < 1){
-            event.setCanceled(true);
-            livingEntity.level.playSound((Player)null, livingEntity.getX(), livingEntity.getY(), livingEntity.getZ(), SoundEvents.PLAYER_ATTACK_WEAK, livingEntity.getSoundSource(), 1.0F, 1.0F);
+        if(!livingEntity.level.isClientSide) {
+            DamageSource damageSource = event.getSource();
+            if (damageSource.isBypassInvul()) return;
+            boolean flag = entity != null && (entity instanceof LivingEntity || (entity instanceof Projectile projectile && projectile.getOwner() instanceof LivingEntity));
+            double toDodge = (event.getAmount() / (Math.max(1, livingEntity.getAttributeValue(ModAttributes.AGILITY)) * 0.02 * (flag ? 1 : 10)));
+            if (toDodge < 1) {
+                event.setCanceled(true);
+                livingEntity.level.playSound((Player) null, livingEntity.getX(), livingEntity.getY(), livingEntity.getZ(), SoundEvents.PLAYER_ATTACK_WEAK, livingEntity.getSoundSource(), 1.0F, 1.0F);
+            }
         }
     }
     @SubscribeEvent

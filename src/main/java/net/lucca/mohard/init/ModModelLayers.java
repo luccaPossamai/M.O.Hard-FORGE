@@ -14,11 +14,7 @@ public class ModModelLayers {
 
     public static final ModelLayerLocation NOMAD = new ModelLayerLocation(new ResourceLocation(ModMain.MODID, "nomad"), "main");
 
-    public static final ModelLayerLocation CORRUPTER = new ModelLayerLocation(new ResourceLocation(ModMain.MODID, "corrupter"), "main");
-
-    public static final ModelLayerLocation DUMMY = new ModelLayerLocation(new ResourceLocation(ModMain.MODID, "dummy"), "main");
-
-    public static final ModelLayerLocation CORRUPTED_PLAYER_LAYER = new ModelLayerLocation(new ResourceLocation(ModMain.MODID, "corrupted_player"), "armor");
+    public static final ModelLayerLocation AMETHYST_BOULDER = new ModelLayerLocation(new ResourceLocation(ModMain.MODID, "amethyst_boulder"), "main");
 
     public static final LayerDefinition PLAYER_FIT_OUTER_ARMOR = LayerDefinition.create(HumanoidModel.createMesh(new CubeDeformation(0.5F), 0.0F), 64, 32);
 

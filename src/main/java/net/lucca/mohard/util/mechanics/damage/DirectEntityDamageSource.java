@@ -43,13 +43,11 @@ public class DirectEntityDamageSource extends EntityDamageSource {
 
     public enum Type{
 
-        ANCIENT_BOOK("ancientBook"),
-        DAGGER("floydDagger"),
-        ALGID_AXE("algidAxe"),
-        CURSED_FRIENDSHIP("cursedFriendship"),
-        CONTEMPLATION_SCREAM("contemplationScream"),
-        COLD_FIREBALL("coldFireball"),
-        HEALTH_DISCHARGE("healthDischarge"),
+        ANCIENT_BOOK("heart_of_the_glowing_depths"),
+        DAGGER("floyd_dagger"),
+        ALGID_AXE("algid_axe"),
+        COLD_FIREBALL("cold_fireball"),
+        HEALTH_DISCHARGE("health_discharge"),
         ;
 
         final String name;

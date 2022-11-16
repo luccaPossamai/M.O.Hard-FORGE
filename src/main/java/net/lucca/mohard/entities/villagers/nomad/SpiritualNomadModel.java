@@ -30,54 +30,6 @@ public class SpiritualNomadModel<T extends SpiritualNomadEntity> extends Hierarc
         this.rightArm = modelPart.getChild("right_arm");
         this.leftArm = modelPart.getChild("left_arm");
         this.arms = modelPart.getChild("arms");
-        /*
-        float f = 0.5F;
-        this.head = (new ModelPart(this)).setTexSize(p_i51059_2_, p_i51059_3_);
-        this.head.setPos(0.0F, 0.0F, 0.0F);
-        this.head.texOffs(0, 0).addBox(-4.0F, -10.0F, -4.0F, 8.0F, 10.0F, 8.0F, p_i51059_1_);
-        this.hat = (new ModelPart(this)).setTexSize(p_i51059_2_, p_i51059_3_);
-        this.hat.setPos(0.0F, 0.0F, 0.0F);
-        this.hat.texOffs(32, 0).addBox(-4.0F, -10.0F, -4.0F, 8.0F, 10.0F, 8.0F, p_i51059_1_ + 0.5F);
-        this.head.addChild(this.hat);
-        this.nose = (new ModelPart(this)).setTexSize(p_i51059_2_, p_i51059_3_);
-        this.nose.setPos(0.0F, -2.0F, 0.0F);
-        this.nose.texOffs(24, 0).addBox(-1.0F, -1.0F, -6.0F, 2.0F, 4.0F, 2.0F, p_i51059_1_);
-        this.head.addChild(this.nose);
-        this.body = (new ModelPart(this)).setTexSize(p_i51059_2_, p_i51059_3_);
-        this.body.setPos(0.0F, 0.0F, 0.0F);
-        this.body.texOffs(16, 20).addBox(-4.0F, 0.0F, -3.0F, 8.0F, 12.0F, 6.0F, p_i51059_1_);
-        this.jacket = (new ModelPart(this)).setTexSize(p_i51059_2_, p_i51059_3_);
-        this.jacket.setPos(0.0F, 0.0F, 0.0F);
-        this.jacket.texOffs(0, 38).addBox(-4.0F, 0.0F, -3.0F, 8.0F, 18.0F, 6.0F, p_i51059_1_ + 0.5F);
-        this.body.addChild(this.jacket);
-        this.arms = (new ModelPart(this)).setTexSize(p_i51059_2_, p_i51059_3_);
-        this.arms.setPos(0.0F, 2.0F, 0.0F);
-        this.arms.texOffs(44, 22).addBox(-8.0F, -2.0F, -2.0F, 4.0F, 8.0F, 4.0F, p_i51059_1_);
-        this.arms.texOffs(44, 22).addBox(4.0F, -2.0F, -2.0F, 4.0F, 8.0F, 4.0F, p_i51059_1_, true);
-        this.arms.texOffs(40, 38).addBox(-4.0F, 2.0F, -2.0F, 8.0F, 4.0F, 4.0F, p_i51059_1_);
-
-        this.rightArm = (new ModelPart(this, 40, 46)).setTexSize(p_i51059_2_, p_i51059_3_);
-        this.rightArm.addBox(-3.0F, -2.0F, -2.0F, 4.0F, 12.0F, 4.0F, p_i51059_1_);
-        this.rightArm.setPos(-5.0F, 2.0F, 0.0F);
-        this.leftArm = (new ModelPart(this, 40, 46)).setTexSize(p_i51059_2_, p_i51059_3_);
-        this.leftArm.mirror = true;
-        this.leftArm.addBox(-1.0F, -2.0F, -2.0F, 4.0F, 12.0F, 4.0F, p_i51059_1_);
-        this.leftArm.setPos(5.0F, 2.0F, 0.0F);
-
-        this.rightLeg = (new ModelPart(this, 0, 22)).setTexSize(p_i51059_2_, p_i51059_3_);
-        this.rightLeg.setPos(-2.0F, 12.0F, 0.0F);
-        this.rightLeg.addBox(-2.0F, 0.0F, -2.0F, 4.0F, 12.0F, 4.0F, p_i51059_1_);
-        this.leftLeg = (new ModelPart(this, 0, 22)).setTexSize(p_i51059_2_, p_i51059_3_);
-        this.leftLeg.mirror = true;
-        this.leftLeg.setPos(2.0F, 12.0F, 0.0F);
-        this.leftLeg.addBox(-2.0F, 0.0F, -2.0F, 4.0F, 12.0F, 4.0F, p_i51059_1_);
-
-        this.arms.visible = false;
-        this.leftArm.visible = false;
-        this.rightArm.visible = false;
-
-         */
-
     }
 
     public static MeshDefinition createBodyModel() {

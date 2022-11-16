@@ -1,7 +1,7 @@
 package net.lucca.mohard.init;
 
 import net.lucca.mohard.ModMain;
-import net.lucca.mohard.entities.illagers.iceIsolator.IceIsolator;
+import net.lucca.mohard.entities.iceIsolator.IceIsolator;
 import net.lucca.mohard.itens.essence.EssenceData;
 import net.lucca.mohard.itens.essence.EssenceItem;
 import net.lucca.mohard.itens.essence.EssencePredicate;
@@ -91,18 +91,18 @@ public class ModEssences {
     public static final RegistryObject<EssenceItem> ZOMBIFIED_PIGLIN_ESSENCE = register("zombified_piglin", EssencesData.ZOMBIFIED_PIGLIN, 15373203, 5009705);
     //TODO COLORS OF THE NEW SPAWNEGGS
     public static final RegistryObject<EssenceItem> IRON_GOLEM_ESSENCE = register("iron_golem", EssencesData.IRON_GOLEM, 15198183, 894731 );
-    public static final RegistryObject<EssenceItem> ILLUSIONER_ESSENCE = register("illusioner", EssencesData.ILLUSIONER, 2243405, 16579584);
+    public static final RegistryObject<EssenceItem> ILLUSIONER_ESSENCE = register("illusioner", EssencesData.ILLUSIONER, 1267859, 2653297);
     //TODO COLORS OF THE NEW SPAWNEGGS
     public static final RegistryObject<EssenceItem> SNOW_GOLEM_ESSENCE = register("snow_golem", EssencesData.SNOW_GOLEM, 15198183, 15690005);
     public static final RegistryObject<EssenceItem> ICE_ISOLATOR_ESSENCE = register("ice_isolator", EssencesData.ICE_ISOLATOR, 9156025, 9804699);
     public static final RegistryObject<EssenceItem> BRUNO_ESSENCE = register("bruno", EssencesData.BRUNO, 9156025, 10489616, entity -> (entity instanceof IceIsolator iceIsolator && ChatFormatting.stripFormatting(iceIsolator.getName().getString()).equals("Bruno")));
     public static final RegistryObject<EssenceItem> KILLER_BUNNY_ESSENCE = register("easter", EssencesData.KILLER_BUNNY, 16777215, 7735831, entity -> (entity instanceof Rabbit rabbit && rabbit.getRabbitType() == 99), true);
     public static final RegistryObject<EssenceItem> BLUE_AXOLOTL_ESSENCE = register("blue_axolotl", EssencesData.BLUE_AXOLOTL, 6903523, 14058539, entity -> (entity instanceof Axolotl axolotl && axolotl.getVariant().equals(Axolotl.Variant.BLUE)));
-    public static final RegistryObject<EssenceItem> CHARGED_CREEPER_ESSENCE = register("charged_creeper", EssencesData.CHARGED_CREEPER, 894731, 9156025, entity -> (entity instanceof Creeper creeper && creeper.isPowered()));
+    public static final RegistryObject<EssenceItem> CHARGED_CREEPER_ESSENCE = register("charged_creeper", EssencesData.CHARGED_CREEPER, 3721346, 2987007, entity -> (entity instanceof Creeper creeper && creeper.isPowered()));
     //TODO COLORS OF THE NEW SPAWNEGGS
-    public static final RegistryObject<EssenceItem> ENDER_DRAGON_ESSENCE = register("ender_dragon", EssencesData.ENDER_DRAGON, 894731, 9156025);
+    public static final RegistryObject<EssenceItem> ENDER_DRAGON_ESSENCE = register("ender_dragon", EssencesData.ENDER_DRAGON, 2302755, 14711290);
     //TODO COLORS OF THE NEW SPAWNEGGS
-    public static final RegistryObject<EssenceItem> WITHER_ESSENCE = register("wither", EssencesData.WITHER, 894731, 9156025);
+    public static final RegistryObject<EssenceItem> WITHER_ESSENCE = register("wither", EssencesData.WITHER, 2697513, 10855845);
     public static final RegistryObject<EssenceItem> WARDEN_ESSENCE = register("warden", EssencesData.WARDEN, 1001033, 3790560);
 
 

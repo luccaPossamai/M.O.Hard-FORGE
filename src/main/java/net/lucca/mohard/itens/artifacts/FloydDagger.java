@@ -2,6 +2,7 @@ package net.lucca.mohard.itens.artifacts;
 
 import net.lucca.mohard.init.ModAttributes;
 import net.lucca.mohard.init.ModDamageSources;
+import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.damagesource.DamageSource;
@@ -12,6 +13,8 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.Wearable;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.extensions.IForgeItem;
 
 public class FloydDagger extends GenericArtifact implements IForgeItem, Wearable, MeleeCrittableArtifact {
@@ -55,5 +58,10 @@ public class FloydDagger extends GenericArtifact implements IForgeItem, Wearable
     @Override
     public boolean shouldCrit(Player player, Entity entity) {
         return !player.isSprinting() && player.fallDistance > 0.0F && !player.isOnGround() && !player.onClimbable() && !player.isInWater() && !player.hasEffect(MobEffects.BLINDNESS) && !player.isPassenger() && entity instanceof LivingEntity;
+    }
+
+    @Override
+    public boolean canAttackBlock(BlockState p_43291_, Level p_43292_, BlockPos p_43293_, Player p_43294_) {
+        return !p_43294_.isCreative();
     }
 }

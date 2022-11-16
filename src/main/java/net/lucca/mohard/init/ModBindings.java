@@ -9,10 +9,10 @@ import java.util.List;
 import java.util.Map;
 
 public class ModBindings {
+
     public static void register(){}
     public static final Map<String, EssenceEntailBinding> BINDINGS_MAP = new HashMap<>();
     public static final List<EssenceEntailBinding> BINDINGS = new ArrayList<>();
-
 
     public static final EssenceEntailBinding EMPTY_BINDING = binding("empty_binding", new EssenceEntail());
 
@@ -20,6 +20,7 @@ public class ModBindings {
     public static final EssenceEntailBinding LIFE_STEAL = binding("life_steal", new LifeStealEntail());
     public static final EssenceEntailBinding REGENERATION = binding("regeneration", new RegenerationEntail());
     public static final EssenceEntailBinding HEALTH_DISCHARGE = binding("health_discharge", new HealthDischargeEntail());
+    public static final EssenceEntailBinding GHOST_RECOVERY = binding("ghost_recovery", new GhostRecovery());
 
     private static EssenceEntailBinding binding(String name, EssenceEntail entail){
         EssenceEntailBinding binding = new EssenceEntailBinding(entail, name);

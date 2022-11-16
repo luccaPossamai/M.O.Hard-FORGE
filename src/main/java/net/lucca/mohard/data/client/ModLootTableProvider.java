@@ -2,26 +2,21 @@ package net.lucca.mohard.data.client;
 
 import com.google.common.collect.ImmutableList;
 import com.mojang.datafixers.util.Pair;
-import net.lucca.mohard.ModMain;
 import net.lucca.mohard.init.*;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.loot.BlockLoot;
-import net.minecraft.data.loot.ChestLoot;
 import net.minecraft.data.loot.EntityLoot;
 import net.minecraft.data.loot.LootTableProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.LootTables;
 import net.minecraft.world.level.storage.loot.ValidationContext;
-import net.minecraft.world.level.storage.loot.entries.EmptyLootItem;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
-import net.minecraft.world.level.storage.loot.functions.EnchantRandomlyFunction;
 import net.minecraft.world.level.storage.loot.functions.LootingEnchantFunction;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSet;
@@ -53,7 +48,6 @@ public class ModLootTableProvider extends LootTableProvider {
 
         return ImmutableList.of(
                 Pair.of(ModBlockLootTables::new, LootContextParamSets.BLOCK),
-                Pair.of(ModChestLoot::new, LootContextParamSets.CHEST),
                 Pair.of(ModEntityLoot::new, LootContextParamSets.ENTITY)
 
         );
@@ -91,32 +85,6 @@ public class ModLootTableProvider extends LootTableProvider {
         }
     }
 
-    public static class ModChestLoot extends ChestLoot{
-
-        @Override
-        public void accept(BiConsumer<ResourceLocation, LootTable.Builder> resourceLocationBuilderBiConsumer) {
-            resourceLocationBuilderBiConsumer.accept(
-                    ModLootTables.ICE_ISOLATOR_HOUSE, LootTable.lootTable()
-                            .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1)).add(LootItem.lootTableItem(ModItems.ALGID_AXE.get())))
-                            .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).add(LootItem.lootTableItem(Items.GOLDEN_APPLE).setWeight(20)).add(LootItem.lootTableItem(Items.ENCHANTED_GOLDEN_APPLE)).add(LootItem.lootTableItem(Items.NAME_TAG).setWeight(30)).add(LootItem.lootTableItem(Items.BOOK).setWeight(10).apply(EnchantRandomlyFunction.randomApplicableEnchantment())).add(LootItem.lootTableItem(Items.IRON_PICKAXE).setWeight(5)).add(EmptyLootItem.emptyItem().setWeight(5)))
-                            .withPool(LootPool.lootPool().setRolls(UniformGenerator.between(2.0F, 4.0F)).add(LootItem.lootTableItem(Items.IRON_INGOT).setWeight(10).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 5.0F)))).add(LootItem.lootTableItem(Items.GOLD_INGOT).setWeight(5).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 3.0F)))).add(LootItem.lootTableItem(Items.REDSTONE).setWeight(5).apply(SetItemCountFunction.setCount(UniformGenerator.between(4.0F, 9.0F)))).add(LootItem.lootTableItem(Items.LAPIS_LAZULI).setWeight(5).apply(SetItemCountFunction.setCount(UniformGenerator.between(4.0F, 9.0F)))).add(LootItem.lootTableItem(Items.DIAMOND).setWeight(3).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F)))).add(LootItem.lootTableItem(Items.COAL).setWeight(10).apply(SetItemCountFunction.setCount(UniformGenerator.between(3.0F, 8.0F)))).add(LootItem.lootTableItem(Items.BREAD).setWeight(15).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 3.0F)))).add(LootItem.lootTableItem(Items.GLOW_BERRIES).setWeight(15).apply(SetItemCountFunction.setCount(UniformGenerator.between(3.0F, 6.0F)))).add(LootItem.lootTableItem(Items.MELON_SEEDS).setWeight(10).apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 4.0F)))).add(LootItem.lootTableItem(Items.PUMPKIN_SEEDS).setWeight(10).apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 4.0F)))).add(LootItem.lootTableItem(Items.BEETROOT_SEEDS).setWeight(10).apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 4.0F)))))
-                            .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(3.0F)).add(LootItem.lootTableItem(Blocks.SNOW_BLOCK).setWeight(20).apply(SetItemCountFunction.setCount(UniformGenerator.between(4.0F, 8.0F)))).add(LootItem.lootTableItem(Blocks.POWDER_SNOW.asItem()).setWeight(5)).add(LootItem.lootTableItem(Items.SNOWBALL).setWeight(5).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 4.0F)))).add(LootItem.lootTableItem(Items.LEATHER_BOOTS).setWeight(5).apply(EnchantRandomlyFunction.randomApplicableEnchantment())).add(LootItem.lootTableItem(Blocks.TORCH).setWeight(15).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 16.0F)))))
-                            .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(2F)).add(LootItem.lootTableItem(ModEssences.VILLAGER_ESSENCE.get()).setWeight(20)).add(LootItem.lootTableItem(ModEssences.VILLAGER_ESSENCE.get()).setWeight(30)).add(LootItem.lootTableItem(ModEssences.IRON_GOLEM_ESSENCE.get()).setWeight(50)))
-            );
-            resourceLocationBuilderBiConsumer.accept(
-                    ModLootTables.CORRUPTER_WAGON, LootTable.lootTable()
-                            .withPool(LootPool.lootPool().setRolls(UniformGenerator.between(5.0F, 8.0F)).add(LootItem.lootTableItem(Items.CARROT).setWeight(20).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 4.0F)))).add(LootItem.lootTableItem(Items.POTATO).setWeight(10).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 4.0F)))).add(LootItem.lootTableItem(Items.POISONOUS_POTATO).setWeight(5).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F)))))
-                            .withPool(LootPool.lootPool().setRolls(UniformGenerator.between(1.0F, 3.0F)).add(LootItem.lootTableItem(Items.EMERALD).setWeight(5).apply(SetItemCountFunction.setCount(UniformGenerator.between(4.0F, 8.0F)))).add(LootItem.lootTableItem(ModItems.MELTED_VILIO.get()).setWeight(5).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F)))).add(LootItem.lootTableItem(ModEssences.VILLAGER_ESSENCE.get()).setWeight(5).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 5.0F)))))
-                            .withPool(LootPool.lootPool().setRolls(UniformGenerator.between(0.0F, 1.0F)).add(LootItem.lootTableItem(ModItems.MAGIC_CHESTPLATE.get())).add(LootItem.lootTableItem(ModItems.NOMADS_BANNER_PATTERN.get())))
-                            .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(2.0F)).add(LootItem.lootTableItem(Items.COOKED_COD).apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 4.0F)))).add(LootItem.lootTableItem(Items.COOKED_SALMON).apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 4.0F)))))
-                            .withPool(LootPool.lootPool().setRolls(UniformGenerator.between(0F, 1F)).add(LootItem.lootTableItem(ModItems.VILIO_IDOL.get()))));
-
-        }
-        private static ResourceLocation generateChest(String name){
-            return new ResourceLocation(ModMain.MODID, "chests/"+name);
-        }
-    }
-
     public static class ModEntityLoot extends EntityLoot {
         @Override
         public void accept(@NotNull BiConsumer<ResourceLocation, LootTable.Builder> resourceLocationBuilderBiConsumer) {
@@ -138,6 +106,11 @@ public class ModLootTableProvider extends LootTableProvider {
             if(lootTable.getLootTableId().toString().equals("minecraft:chests/pillager_outpost")){
                 lootTable.addPool(ModCustomItems.getMagicCrossbow(UniformGenerator.between(0, 1F)));
             }
+            if(lootTable.getLootTableId().toString().equals("minecraft:chests/igloo_chest")){
+                lootTable.addPool(LootPool.lootPool().setRolls(UniformGenerator.between(0, 1)).add(LootItem.lootTableItem(ModEssences.ICE_ISOLATOR_ESSENCE.get()).setWeight(99)).add(LootItem.lootTableItem(ModEssences.BRUNO_ESSENCE.get()).setWeight(1)).build());
+
+            }
+
 
 
         }

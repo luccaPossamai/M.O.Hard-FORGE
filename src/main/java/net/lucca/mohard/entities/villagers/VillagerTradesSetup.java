@@ -1,15 +1,12 @@
 package net.lucca.mohard.entities.villagers;
 
-import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import net.lucca.mohard.init.ModItems;
-import net.lucca.mohard.init.ModTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.TagKey;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.npc.VillagerProfession;
 import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -18,28 +15,14 @@ import net.minecraft.world.item.trading.MerchantOffer;
 import net.minecraft.world.level.levelgen.structure.Structure;
 import net.minecraft.world.level.saveddata.maps.MapDecoration;
 import net.minecraft.world.level.saveddata.maps.MapItemSavedData;
-import net.minecraftforge.event.village.VillagerTradesEvent;
 import net.minecraftforge.event.village.WandererTradesEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
 import javax.annotation.Nullable;
-import java.util.List;
 
 @Mod.EventBusSubscriber
 public class VillagerTradesSetup {
-
-    @SubscribeEvent
-    public static void villagerTrades(VillagerTradesEvent event){
-        if(event.getType() == VillagerProfession.CARTOGRAPHER){
-            Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
-            trades.put(5, List.of(
-                    new TreasureMapForEmeralds(15, ModTags.Structures.ON_ISOLATOR_EXPLORER_MAPS, "filled_map.isolator", MapDecoration.Type.MANSION, 12, 5),
-                    new TreasureMapForEmeralds(15, ModTags.Structures.ON_CORRUPTER_WAGON_EXPLORER_MAPS, "filled_map.corrupter", MapDecoration.Type.BANNER_GREEN, 12, 5)
-
-            ));
-        }
-    }
 
     @SubscribeEvent
     public static void wandererTrades(WandererTradesEvent event){

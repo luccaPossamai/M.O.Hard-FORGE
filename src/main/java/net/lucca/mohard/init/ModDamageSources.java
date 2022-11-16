@@ -24,16 +24,7 @@ public class ModDamageSources {
     public static DamageSource ancientBook(Entity damager, @Nullable Entity owner){
         return playerMagicAttack(damager, owner, DirectEntityDamageSource.Type.ANCIENT_BOOK);
     }
-
-    public static DamageSource scream(Entity damager, @Nullable Entity owner){
-        return playerMagicAttack(damager, owner, DirectEntityDamageSource.Type.CONTEMPLATION_SCREAM);
-    }
-
-    public static DamageSource cursedFriendShip(Entity damager, @Nullable Entity owner){
-        return playerMagicAttack(damager, owner, DirectEntityDamageSource.Type.CURSED_FRIENDSHIP);
-    }
-
     public static DamageSource playerMagicAttack(Entity damager, @Nullable Entity owner, DirectEntityDamageSource.Type type) {
-        return (new DirectEntityDamageSource("directMagic", damager, owner, type)).setMagic();
+        return (new DirectEntityDamageSource("direct_magic", damager, owner, type)).setMagic();
     }
 }

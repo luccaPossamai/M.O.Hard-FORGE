@@ -1,6 +1,5 @@
 package net.lucca.mohard.itens.artifacts.algidAxe;
 
-import net.lucca.mohard.util.mechanics.damage.DirectEntityDamageSource;
 import net.lucca.mohard.init.ModDamageSources;
 import net.lucca.mohard.init.ModEntityTypes;
 import net.lucca.mohard.init.ModItems;
@@ -30,7 +29,7 @@ import javax.annotation.Nullable;
 public class ThrownAlgidAxe extends AbstractArrow {
 
     private ItemStack axe = new ItemStack(ModItems.ALGID_AXE.get());
-    private boolean dealtDamage;
+    private boolean dealtDamage = false;
     private boolean areaFreeze = false;
     private final int power;
     private double damage = 8D;

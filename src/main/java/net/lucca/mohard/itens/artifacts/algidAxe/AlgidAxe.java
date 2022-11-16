@@ -151,4 +151,9 @@ public class AlgidAxe extends GenericArtifact implements MeleeCrittableArtifact 
     public boolean isCorrectToolForDrops(ItemStack stack, BlockState state) {
         return state.is(blocks);
     }
+
+    @Override
+    public boolean canAttackBlock(BlockState p_43291_, Level p_43292_, BlockPos p_43293_, Player p_43294_) {
+        return !p_43294_.isCreative();
+    }
 }

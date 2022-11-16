@@ -11,7 +11,6 @@ import net.lucca.mohard.itens.artifacts.FloydDagger;
 import net.lucca.mohard.itens.artifacts.algidAxe.AlgidAxe;
 import net.lucca.mohard.itens.artifacts.wand.Wand;
 import net.lucca.mohard.itens.essenceBundle.EssenceBundleItem;
-import net.lucca.mohard.itens.slingshot.SlingshotItem;
 import net.lucca.mohard.itens.tools.VilioTier;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.*;
@@ -87,10 +86,6 @@ public class ModItems {
                     .stacksTo(1)
                     .rarity(Rarity.COMMON)));
 
-    public static final RegistryObject<Item> SLINGSHOT = ITEMS.register("slingshot", () ->
-            new SlingshotItem(new Item.Properties().tab(ModItemGroups.EQUIPMENT)
-                    .stacksTo(1)
-                    .rarity(Rarity.COMMON)));
 
     public static final RegistryObject<Item> ALGID_AXE = ITEMS.register("algid_axe", () ->
             new AlgidAxe(new Item.Properties().tab(ModItemGroups.ARTIFACTS)

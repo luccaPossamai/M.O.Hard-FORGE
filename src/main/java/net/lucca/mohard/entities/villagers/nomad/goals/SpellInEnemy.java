@@ -3,29 +3,26 @@ package net.lucca.mohard.entities.villagers.nomad.goals;
 import com.google.common.collect.ImmutableList;
 import net.lucca.mohard.entities.villagers.nomad.SpiritualNomadEntity;
 import net.lucca.mohard.entities.villagers.nomad.spells.NomadSpells;
-import net.lucca.mohard.util.mechanics.evolution.LevelMechanic;
 import net.lucca.mohard.init.ModEffects;
+import net.lucca.mohard.util.mechanics.evolution.LevelMechanic;
+import net.minecraft.util.Mth;
+import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.goal.Goal;
-import net.minecraft.world.entity.LightningBolt;
+import net.minecraft.world.entity.ai.targeting.TargetingConditions;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.projectile.SmallFireball;
 import net.minecraft.world.item.ArrowItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.effect.MobEffect;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.EntitySelector;
-import net.minecraft.util.Mth;
 
-import java.util.*;
+import java.util.Collections;
+import java.util.EnumSet;
+import java.util.List;
 import java.util.function.Predicate;
-
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.ai.targeting.TargetingConditions;
 
 public class SpellInEnemy<T extends LivingEntity> extends Goal {
 
@@ -167,11 +164,11 @@ public class SpellInEnemy<T extends LivingEntity> extends Goal {
     }
     public void setEffects(){
         if(!this.choosenSpell.equals(NomadSpells.FIELD)) {
-            this.toKill.addEffect(new MobEffectInstance(ModEffects.STUN.get(), this.choosenSpell.getTime(), 10, false, false, false));
+            this.toKill.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, this.choosenSpell.getTime(), 10, false, false, false));
             this.toKill.addEffect(new MobEffectInstance(MobEffects.LEVITATION, this.choosenSpell.getTime(), 0, false, false, false));
             this.toKill.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, this.choosenSpell.getTime() + 20, 0, false, false, false));
         }
-        this.nomad.addEffect(new MobEffectInstance(ModEffects.STUN.get(), this.choosenSpell.getTime(), 10, false, false, false));
+        this.nomad.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, this.choosenSpell.getTime(), 10, false, false, false));
 
     }
 }
