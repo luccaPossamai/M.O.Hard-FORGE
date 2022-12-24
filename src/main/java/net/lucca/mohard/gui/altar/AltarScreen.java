@@ -1,24 +1,16 @@
 package net.lucca.mohard.gui.altar;
 
-import net.lucca.mohard.block.altar.GUI.AltarMenu;
-import net.lucca.mohard.init.ModAttributes;
-import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.systems.RenderSystem;
+import com.mojang.blaze3d.vertex.PoseStack;
+import net.lucca.mohard.block.altar.GUI.AltarMenu;
 import net.lucca.mohard.util.help.Methods;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.Font;
-import net.minecraft.client.gui.components.Widget;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
-import net.minecraft.client.gui.components.AbstractWidget;
 import net.minecraft.client.renderer.GameRenderer;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.player.Inventory;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.network.chat.Component;
-
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
 
 public class AltarScreen extends AbstractContainerScreen<AltarMenu> {
 
@@ -54,11 +46,12 @@ public class AltarScreen extends AbstractContainerScreen<AltarMenu> {
                 if(Minecraft.getInstance().player == null) break;
                 bind();
                 this.blit(p_230450_1_, i - 40, j + 1 + (k * 20), 0, 166, 40, 21);
-                this.blit(p_230450_1_, i - 35, j + 7 + (k * 20), 41 + (k * 7), 166, 7, 8);
+                this.blit(p_230450_1_, i - 44, j + 4 + (k * 20), 41 + (k * 13), 166, 13, 13);
                 Attribute att = Methods.getAttributes().get(k);
                 double stat = Minecraft.getInstance().player.getAttributeBaseValue(att);
-                Component message = Component.literal(""+stat);
-                this.font.draw(p_230450_1_, message.getVisualOrderText(), (float)(i - 15 - this.font.width(message.getVisualOrderText()) / 2), (float) j + 7 + (k * 20), 0);
+                Component message = Component.literal(""+(int)stat);
+                this.font.draw(p_230450_1_, message.getVisualOrderText(), (float)(i - 18 - this.font.width(message.getVisualOrderText()) / 2), (float) j + 7 + (k * 20), 0);
+
             }
         }
 

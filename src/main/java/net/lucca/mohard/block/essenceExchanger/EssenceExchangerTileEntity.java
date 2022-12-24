@@ -178,7 +178,7 @@ public class EssenceExchangerTileEntity extends BaseContainerBlockEntity{
             }
             if (essenceExchangerTileEntity.TIME >= essenceExchangerTileEntity.getTimeToExchange()) {
                 Entity entity = essenceExchangerTileEntity.entityType.create(level);
-                entity.setPos(pos.getX(), pos.getY() + 1, pos.getZ());
+                entity.setPos(pos.getX() + 0.5, pos.getY() + 1, pos.getZ() + 0.5);
                 if (entity instanceof Mob && entity.level instanceof ServerLevel) {
                     ((Mob) entity).finalizeSpawn((ServerLevel) entity.level, entity.level.getCurrentDifficultyAt(entity.blockPosition()), MobSpawnType.DISPENSER, null, null);
                 }

@@ -1,7 +1,5 @@
 package net.lucca.mohard.itens.armors;
 
-import net.lucca.mohard.init.ModBlocks;
-import net.lucca.mohard.init.ModItems;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.LazyLoadedValue;
@@ -17,16 +15,6 @@ public enum ModArmorMaterials implements ArmorMaterial {
     MAGIC("magic", 13, new int[]{2, 4, 5, 3}, 12, SoundEvents.ARMOR_EQUIP_LEATHER, 0, 0, () -> {
         return Ingredient.of(Items.LEATHER);
     }, false),
-    VILIO("vilio", 42, new int[]{5, 9, 11, 5}, 12, SoundEvents.ARMOR_EQUIP_IRON, 4, 0.2F, () -> {
-        return Ingredient.of(ModItems.VILIO_INGOT.get());
-    }, true),
-    TENDER_OBSIDIAN("tender_obsidian", 40, new int[]{3, 5, 7, 3}, 12, SoundEvents.ARMOR_EQUIP_NETHERITE, 0, 0.1F, () -> {
-        return Ingredient.of(ModBlocks.TENDER_OBSIDIAN.get());
-    }, false),
-
-
-
-
     ;
     private static final int[] HEALTH_PER_SLOT = new int[]{13, 15, 16, 11};
     private static final int[] CONSTANT_HEALTH_PER_SLOT = new int[]{10, 10, 10, 10};

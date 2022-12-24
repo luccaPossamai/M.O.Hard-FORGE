@@ -20,10 +20,10 @@ public class ModBlockStateProvider extends BlockStateProvider {
     @Override
     protected void registerStatesAndModels() {
 
-        simpleBlock(ModBlocks.VILIO_ALTAR.get(), models().cubeBottomTop("vilio_altar",
-                mcLoc("mohard:block/vilio_altar_side"),
-                mcLoc("mohard:block/vilio_altar_bottom"),
-                mcLoc("mohard:block/vilio_altar_top")));
+        simpleBlock(ModBlocks.ENDER_ALTAR.get(), models().cubeBottomTop("ender_altar",
+                mcLoc("mohard:block/ender_altar_side"),
+                mcLoc("mohard:block/ender_altar_bottom"),
+                mcLoc("mohard:block/ender_altar_top")));
 
 
 
@@ -47,13 +47,6 @@ public class ModBlockStateProvider extends BlockStateProvider {
             j++;
 
         }
-
-        simpleBlock(ModBlocks.TENDER_OBSIDIAN.get(), models().cubeAll("tender_obsidian", mcLoc("mohard:block/tender_obsidian")));
-        simpleBlock(ModBlocks.VILIO_ORE.get(), models().cubeAll("vilio_ore", mcLoc("mohard:block/vilio_ore")));
-        simpleBlock(ModBlocks.DEEPSLATE_VILIO_ORE.get(), models().cubeAll("deepslate_vilio_ore", mcLoc("mohard:block/deepslate_vilio_ore")));
-
-        simpleBlock(ModBlocks.VILIO_BLOCK.get(), models().cubeAll("vilio_block", mcLoc("mohard:block/vilio_block")));
-
     }
 
 

@@ -12,12 +12,11 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.Wearable;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.extensions.IForgeItem;
 
-public class FloydDagger extends GenericArtifact implements IForgeItem, Wearable, MeleeCrittableArtifact {
+public class FloydDagger extends GenericArtifact implements IForgeItem, MeleeCrittableArtifact {
 
     public FloydDagger(Properties p_i48487_1_) {
         super(p_i48487_1_, 1.5, 2 * 20, true);
@@ -41,6 +40,7 @@ public class FloydDagger extends GenericArtifact implements IForgeItem, Wearable
             this.onHit(player, entity, flag);
             this.hurtItem(player, stack);
         }
+
         if(!flag0){
             player.level.playSound((Player)null, player.getX(), player.getY(), player.getZ(), SoundEvents.PLAYER_ATTACK_WEAK, player.getSoundSource(), 1.0F, 1.0F);
         }

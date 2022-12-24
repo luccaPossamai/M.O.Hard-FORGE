@@ -51,12 +51,12 @@ public class EssenceDataHelper {
     public static double calculateUpgrades(double value, int upgradeValue, int negativeUpgradeValue){
         if (upgradeValue > 0) {
             if (value > 0) {
-                value = (value + ((double) (upgradeValue * upgradeValue + upgradeValue) / 2));
+                value = value + (2 * upgradeValue) - 1;
             }
         }
         if (negativeUpgradeValue > 0) {
             if (value < 0) {
-                double newStat = (value + ((double) (negativeUpgradeValue * negativeUpgradeValue + negativeUpgradeValue) / 2));
+                double newStat = value +  (2 * negativeUpgradeValue) - 1;
                 if (newStat > 0) newStat = 0;
                 value = newStat;
             }
@@ -119,7 +119,7 @@ public class EssenceDataHelper {
     }
 
     public static boolean canUpgradeEssence(ItemStack stack){
-        return getEssenceLevel(stack) < 3;
+        return getEssenceLevel(stack) < 5;
     }
 
     public static boolean canUpgradeNegativeEssence(ItemStack stack) {
@@ -133,7 +133,7 @@ public class EssenceDataHelper {
                     break;
                 }
             }
-            return getEssenceNegativeLevel(stack) < 3 && flag;
+            return getEssenceNegativeLevel(stack) < 5 && flag;
         }
         return false;
     }

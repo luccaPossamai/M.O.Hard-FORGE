@@ -26,7 +26,7 @@ public class HollidayEvents {
             int i = localdate.get(ChronoField.DAY_OF_MONTH);
             int j = localdate.get(ChronoField.MONTH_OF_YEAR);
             if ((j == 4 && i == 10 && new Random().nextFloat() < 0.01F)) {
-                rabbit.setRabbitType(99);
+                rabbit.setVariant(Rabbit.Variant.EVIL);
                 sendMessage(entity.level, new Vec3(rabbit.getX(), rabbit.getY(), rabbit.getZ()));
             }
         }

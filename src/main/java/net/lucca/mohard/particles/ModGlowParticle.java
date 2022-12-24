@@ -48,28 +48,28 @@ public class ModGlowParticle extends TextureSheetParticle {
     }
 
     @OnlyIn(Dist.CLIENT)
-    public static class VilioProvider implements ParticleProvider<SimpleParticleType> {
+    public static class EnderAltarParticleProvider implements ParticleProvider<SimpleParticleType> {
         private final double SPEED_FACTOR = 0.01D;
         private final SpriteSet sprite;
 
-        public VilioProvider(SpriteSet p_172238_) {
+        public EnderAltarParticleProvider(SpriteSet p_172238_) {
             this.sprite = p_172238_;
         }
 
         public Particle createParticle(SimpleParticleType p_172249_, ClientLevel p_172250_, double p_172251_, double p_172252_, double p_172253_, double p_172254_, double p_172255_, double p_172256_) {
             ModGlowParticle glowparticle = new ModGlowParticle(p_172250_, p_172251_, p_172252_, p_172253_, 0.0D, 0.0D, 0.0D, this.sprite);
-            glowparticle.setColor( (136.3F / 255F), (70.5F / 255F), (140.1F / 255F));
+            glowparticle.setColor( (62.0F / 255F), (74F / 255F), (75F / 255F));
             glowparticle.setParticleSpeed(p_172254_ * SPEED_FACTOR / 2.0D, p_172255_ * SPEED_FACTOR, p_172256_ * SPEED_FACTOR / 2.0D);
             glowparticle.setLifetime(p_172250_.random.nextInt(30) + 10);
             return glowparticle;
         }
     }
     @OnlyIn(Dist.CLIENT)
-    public static class FreezeProvider implements ParticleProvider<SimpleParticleType> {
+    public static class FreezeParticleProvider implements ParticleProvider<SimpleParticleType> {
         private final double SPEED_FACTOR = 0.001D;
         private final SpriteSet sprite;
 
-        public FreezeProvider (SpriteSet p_172238_) {
+        public FreezeParticleProvider(SpriteSet p_172238_) {
             this.sprite = p_172238_;
         }
 

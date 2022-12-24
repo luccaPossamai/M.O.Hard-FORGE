@@ -11,10 +11,11 @@ public class EssenceEntailCapability {
     }
 
     public EssenceEntail getEntail() {
-        return entail;
+        return this.entail;
     }
 
-    public void setEntail(EssenceEntail entail) {
+    public void setEntail(EssenceEntail entail){
         this.entail = entail;
     }
+
 }

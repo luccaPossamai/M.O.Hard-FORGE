@@ -24,6 +24,11 @@ public class ModDamageSources {
     public static DamageSource ancientBook(Entity damager, @Nullable Entity owner){
         return playerMagicAttack(damager, owner, DirectEntityDamageSource.Type.ANCIENT_BOOK);
     }
+
+    public static DamageSource amethystBoulder(Entity damager, @Nullable Entity owner){
+        return playerMagicAttack(damager, owner, DirectEntityDamageSource.Type.AMETHYST_BOULDER).damageHelmet();
+    }
+
     public static DamageSource playerMagicAttack(Entity damager, @Nullable Entity owner, DirectEntityDamageSource.Type type) {
         return (new DirectEntityDamageSource("direct_magic", damager, owner, type)).setMagic();
     }

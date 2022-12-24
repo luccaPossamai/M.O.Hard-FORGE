@@ -2,7 +2,7 @@ package net.lucca.mohard.entities;
 
 import net.lucca.mohard.ModMain;
 import net.lucca.mohard.entities.amethystBoulder.AmethystBoulderRenderer;
-import net.lucca.mohard.entities.coldfireball.ColdFireballRenderer;
+import net.lucca.mohard.entities.coldfireball.SoulFireballRenderer;
 import net.lucca.mohard.entities.iceIsolator.IceIsolatorRenderer;
 import net.lucca.mohard.entities.villagers.nomad.SpiritualNomadRenderer;
 import net.lucca.mohard.init.ModEntityTypes;
@@ -19,7 +19,7 @@ public class EntitiesRenderer {
         event.registerEntityRenderer(ModEntityTypes.ICE_ISOLATOR.get(), IceIsolatorRenderer::new);
         event.registerEntityRenderer(ModEntityTypes.NOMAD.get(), SpiritualNomadRenderer::new);
         event.registerEntityRenderer(ModEntityTypes.ALGID_AXE.get(), AlgidAxeRenderer::new);
-        event.registerEntityRenderer(ModEntityTypes.COLD_FIREBALL.get(), ColdFireballRenderer::new);
+        event.registerEntityRenderer(ModEntityTypes.COLD_FIREBALL.get(), SoulFireballRenderer::new);
         event.registerEntityRenderer(ModEntityTypes.AMETHYST_BOULDER.get(), AmethystBoulderRenderer::new);
     }
 

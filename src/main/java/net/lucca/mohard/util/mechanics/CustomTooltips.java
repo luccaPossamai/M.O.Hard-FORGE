@@ -60,6 +60,7 @@ public class CustomTooltips {
         if(item instanceof FishingRodItem){
             return "\uD83C\uDFA3 ";
         }
+
         if(item instanceof GenericArtifact){
             return "✧ ";
         }

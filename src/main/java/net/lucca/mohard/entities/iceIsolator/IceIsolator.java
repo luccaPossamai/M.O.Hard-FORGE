@@ -14,6 +14,7 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.InteractionHand;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -57,7 +58,7 @@ public class IceIsolator extends AbstractIllager implements RangedAttackMob {
         this.goalSelector.addGoal(2, new RaiderOpenDoorGoal(this));
         this.goalSelector.addGoal(3, new HoldGroundAttackGoal(this, 10.0F));
         this.goalSelector.addGoal(3, new AlgidAxeRangedAttackGoal<>(this, 1.0D, 60, 20F));
-        this.goalSelector.addGoal(3, new AlgidAxeMeleeAttackGoal<>(this, 1.5D, true));
+        this.goalSelector.addGoal(3, new AlgidAxeMeleeAttackGoal<>(this, 1.1D, true));
         this.targetSelector.addGoal(1, (new HurtByTargetGoal(this, Raider.class)).setAlertOthers());
         this.targetSelector.addGoal(2, new NearestAttackableIceIsolatorTargetGoal(this, Player.class, true));
         this.targetSelector.addGoal(3, new NearestAttackableIceIsolatorTargetGoal(this, AbstractVillager.class, true));
@@ -108,7 +109,7 @@ public class IceIsolator extends AbstractIllager implements RangedAttackMob {
         if(this.isBruno()) {
             return IllagerArmPose.NEUTRAL;
         } else {
-            if (this.isAggressive()) {
+            if (this.isAggressive() && (!this.isMeleeAttackOnCooldown() || !this.isRangedAttackOnCooldown())) {
                 return IllagerArmPose.ATTACKING;
             } else {
                 return this.isCelebrating() ? IllagerArmPose.CELEBRATING : IllagerArmPose.CROSSED;
@@ -203,7 +204,8 @@ public class IceIsolator extends AbstractIllager implements RangedAttackMob {
     public void performRangedAttack(LivingEntity p_32356_, float p_32357_) {
         ItemStack algidAxeStack = this.getItemBySlot(EquipmentSlot.MAINHAND).getItem() instanceof AlgidAxe ? this.getItemBySlot(EquipmentSlot.MAINHAND) : new ItemStack(ModItems.ALGID_AXE.get());
         AlgidAxe algidAxe = (AlgidAxe) algidAxeStack.getItem();
-        ThrownAlgidAxe thrownAlgidAxe = new ThrownAlgidAxe(this.level, this, algidAxeStack, algidAxe.calculatePower(this), algidAxe.getMagicMultiplier(p_32356_, algidAxeStack));
+        double dano = this.getAttributeValue(ModAttributes.MAGIC_DAMAGE);
+        ThrownAlgidAxe thrownAlgidAxe = new ThrownAlgidAxe(this.level, this, algidAxeStack, algidAxe.calculatePower(this), dano * algidAxe.getMagicMultiplier(p_32356_, algidAxeStack));
         double d0 = p_32356_.getX() - this.getX();
         double d1 = p_32356_.getY(0.3333333333333333D) - thrownAlgidAxe.getY();
         double d2 = p_32356_.getZ() - this.getZ();
@@ -215,5 +217,10 @@ public class IceIsolator extends AbstractIllager implements RangedAttackMob {
         setTarget(null);
     }
 
-
+    @Override
+    protected void dropCustomDeathLoot(DamageSource p_21385_, int p_21386_, boolean p_21387_) {
+        super.dropCustomDeathLoot(p_21385_, p_21386_, p_21387_);
+        this.spawnAtLocation(this.getItemBySlot(EquipmentSlot.MAINHAND));
+        this.spawnAtLocation(this.getItemBySlot(EquipmentSlot.OFFHAND));
+    }
 }

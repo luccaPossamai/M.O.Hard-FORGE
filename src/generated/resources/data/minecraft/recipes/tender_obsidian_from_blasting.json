@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:blasting",
-  "cookingtime": 3000,
-  "experience": 5.0,
-  "ingredient": {
-    "item": "minecraft:obsidian"
-  },
-  "result": "mohard:tender_obsidian"
-}

@@ -2,10 +2,9 @@ package net.lucca.mohard.util.mechanics.evolution;
 
 import com.google.common.collect.Multimap;
 import net.lucca.mohard.init.ModAttributes;
-import net.lucca.mohard.itens.VilioCharge;
 import net.lucca.mohard.itens.artifacts.DeepNetherPetrifiedTome;
 import net.lucca.mohard.itens.artifacts.GenericArtifact;
-import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.ai.attributes.Attribute;
@@ -20,23 +19,30 @@ public class ModifiedItem {
     private final boolean changed;
 
     public ModifiedItem(ItemStack itemStack){
-        EquipmentSlot slot = getSlotOfItem(itemStack);
-        if(slot != null && !itemStack.getOrCreateTag().contains("Modified")){
-            List<Attribute> attributes = getAttributesForItem(itemStack).stream().filter(attribute -> (new Random().nextFloat() * LevelMechanic.getLevel(null) > 70)).toList();
-            if(!attributes.isEmpty()) {
-                populateDefaultAttributes(itemStack);
 
-                this.changed = true;
-                CompoundTag tag = itemStack.getOrCreateTag();
-                tag.putInt("Modified", attributes.size());
-                itemStack.setTag(tag);
-                for (Attribute attribute : attributes) {
-                    boolean op = new Random().nextInt(9) <= 1;
-                    itemStack.addAttributeModifier(attribute, new AttributeModifier(UUID.randomUUID(), attribute.getDescriptionId() + " boost", (new Random().nextFloat() * (5 + LevelMechanic.getLevel(null) % 50)) / (op ? 1E2 : 1), op ? AttributeModifier.Operation.MULTIPLY_BASE : AttributeModifier.Operation.ADDITION), slot);
+        EquipmentSlot slot = getSlotOfItem(itemStack);
+        if(slot != null) {
+            CompoundTag tag = itemStack.getOrCreateTag();
+            if (!tag.contains("Modified")) {
+                List<Attribute> attributes = getAttributesForItem(itemStack).stream().filter(attribute -> (new Random().nextFloat() * LevelMechanic.getLevel(null) > 70)).toList();
+                if (!attributes.isEmpty()) {
+                    populateDefaultAttributes(itemStack);
+
+                    this.changed = true;
+                    tag.putInt("Modified", attributes.size());
+                    itemStack.setTag(tag);
+                    for (Attribute attribute : attributes) {
+                        boolean op = new Random().nextInt(9) <= 1;
+                        itemStack.addAttributeModifier(attribute, new AttributeModifier(UUID.randomUUID(), attribute.getDescriptionId() + " boost", (new Random().nextFloat() * (5 + LevelMechanic.getLevel(null) % 50)) / (op ? 1E2 : 1), op ? AttributeModifier.Operation.MULTIPLY_BASE : AttributeModifier.Operation.ADDITION), slot);
+                    }
+                    if (itemStack.getItem() instanceof Wearable && !tag.contains("Unbreakable") && new Random().nextFloat() * LevelMechanic.getLevel(null) > 160) {
+                        tag.putBoolean("Unbreakable", true);
+                    }
+                    return;
                 }
-                return;
             }
         }
+
         this.changed = false;
 
     }
@@ -53,7 +59,7 @@ public class ModifiedItem {
         }
         Arrays.stream(EquipmentSlot.values()).toList().forEach(equipmentSlot -> {
             Multimap<Attribute, AttributeModifier> multimap = map.get(equipmentSlot);
-            Registry.ATTRIBUTE.entrySet().forEach(resourceKeyAttributeEntry -> {
+            BuiltInRegistries.ATTRIBUTE.entrySet().forEach(resourceKeyAttributeEntry -> {
                 if(multimap.containsKey(resourceKeyAttributeEntry.getValue())) {
                     multimap.get(resourceKeyAttributeEntry.getValue()).forEach(attributeModifier -> itemStack.addAttributeModifier(resourceKeyAttributeEntry.getValue(), attributeModifier, equipmentSlot));
                 }
@@ -77,14 +83,14 @@ public class ModifiedItem {
             attributes.add(ModAttributes.AGILITY);
             attributes.add(ModAttributes.ARMOR_PENETRATION);
         }
-        if(item instanceof ShieldItem || item.equals(Items.TOTEM_OF_UNDYING) || item instanceof VilioCharge || item instanceof DeepNetherPetrifiedTome){
+        if(item instanceof ShieldItem || item.equals(Items.TOTEM_OF_UNDYING) || item instanceof DeepNetherPetrifiedTome){
             attributes.add(ModAttributes.INTELLECT);
         }
         return attributes;
     }
     private static EquipmentSlot getSlotOfItem(ItemStack itemStack){
         Item item = itemStack.getItem();
-        if(item instanceof ShieldItem || item.equals(Items.TOTEM_OF_UNDYING) || item instanceof VilioCharge || item instanceof DeepNetherPetrifiedTome){
+        if(item instanceof ShieldItem || item.equals(Items.TOTEM_OF_UNDYING) || item instanceof DeepNetherPetrifiedTome){
                 return EquipmentSlot.OFFHAND;
         }
         if(item instanceof TieredItem || item instanceof GenericArtifact || item instanceof ProjectileWeaponItem){

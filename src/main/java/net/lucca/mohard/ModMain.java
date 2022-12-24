@@ -8,7 +8,7 @@ import net.lucca.mohard.enchantments.ModEnchantmentCategory;
 import net.lucca.mohard.gui.altar.AltarScreen;
 import net.lucca.mohard.gui.essenceExchanger.EssenceExchangerScreen;
 import net.lucca.mohard.init.*;
-import net.lucca.mohard.itens.artifacts.Dash;
+import net.lucca.mohard.itens.artifacts.AmethystAmulet;
 import net.lucca.mohard.itens.essence.EssenceDataHelper;
 import net.lucca.mohard.itens.essenceBundle.EssenceBundleItem;
 import net.lucca.mohard.network.BaseNetwork;
@@ -38,14 +38,11 @@ public class ModMain
         ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, ModClientConfig.SPEC, "mohard-client.toml");
         ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, ModServerConfig.SPEC, "mohard-server.toml");
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
-        ModBanners.register(eventBus);
         ModEssences.ESSENCE_ITEMS.register(eventBus);
-        ModBiomeModifiers.BIOME_MODIFIERS.register(eventBus);
         ModEntityTypes.ENTITIES.register(eventBus);
         ModBlocks.BLOCOS.register(eventBus);
         ModItems.ITEMS.register(eventBus);
         ModBlockStateProperties.register();
-        ModSounds.register(eventBus);
         ModModelLayers.register();
         ModParticles.register(eventBus);
         ModContainers.register(eventBus);
@@ -53,7 +50,7 @@ public class ModMain
         ModEffects.register(eventBus);
         ModEnchantments.register(eventBus);
         ModTileEntityTypes.register(eventBus);
-        ModItemGroups.register();
+        ModCreativeTabs.register();
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
         MinecraftForge.EVENT_BUS.register(this);
@@ -63,10 +60,9 @@ public class ModMain
         EssenceDataHelper.setupEssenceMap();
         EssenceDataHelper.setupEntityMap();
         EssenceDataHelper.printEssence();
-        ItemProperties.register(ModItems.VILIO_IDOL.get(), new ResourceLocation(MODID, "state"), (p_239427_0_, p_239427_1_, p_239427_2_, p_239427_3_) ->{
-            if(p_239427_0_.getItem() instanceof Dash) return Dash.getState(p_239427_0_);
-            return 0F;
-        });
+
+        ItemProperties.register(ModItems.AMETHYST_AMULET.get(), new ResourceLocation(MODID, "binding"), (p_239427_0_, p_239427_1_, p_239427_2_, p_239427_3_) -> p_239427_2_ == null ? 0 : p_239427_2_.getUseItem() != p_239427_0_ ? 0.0F : p_239427_0_.getItem() instanceof AmethystAmulet amethystAmulet ? amethystAmulet.getPower(p_239427_0_.getUseDuration() - p_239427_2_.getUseItemRemainingTicks()) : 0);
+
         ItemProperties.register(ModItems.ESSENCE_BUNDLE.get(), new ResourceLocation(MODID, "filled"), (p_239427_0_, p_239427_1_, p_239427_2_, p_239427_3_) -> EssenceBundleItem.getFullnessDisplay(p_239427_0_));
         MenuScreens.register(ModContainers.ALTAR.get(), AltarScreen::new);
         MenuScreens.register(ModContainers.ESSENCE_EXCHANGER.get(), EssenceExchangerScreen::new);

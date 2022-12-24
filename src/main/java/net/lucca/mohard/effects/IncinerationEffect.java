@@ -30,7 +30,7 @@ public class IncinerationEffect extends MobEffect {
     @Override
     public boolean isDurationEffectTick(int p_76397_1_, int p_76397_2_) {
         int k = 30 / (p_76397_2_ + 1);
-        return p_76397_1_ % k == 0;
+        return k == 0 || p_76397_1_ % k == 0;
     }
 
     @Override

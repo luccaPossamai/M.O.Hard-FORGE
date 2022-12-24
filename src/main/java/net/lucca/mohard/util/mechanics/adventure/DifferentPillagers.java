@@ -22,7 +22,7 @@ public class DifferentPillagers {
             Random random = new Random();
             int i = random.nextInt(100);
             if(i > 90){
-                EntityType.ILLUSIONER.spawn((ServerLevel) pillager.level, null, null, null, pos, MobSpawnType.EVENT, true, false);
+                EntityType.ILLUSIONER.spawn((ServerLevel) pillager.level, pos, MobSpawnType.NATURAL);
             }
         }
     }

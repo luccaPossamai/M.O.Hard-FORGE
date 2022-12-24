@@ -26,11 +26,8 @@ public class VillagerTradesSetup {
 
     @SubscribeEvent
     public static void wandererTrades(WandererTradesEvent event){
-        event.getRareTrades().add(new EmeraldsForMagicArmor(new ItemStack(ModItems.MAGIC_BOOTS.get(), 1), 36));
-        event.getRareTrades().add(new EmeraldsForMagicArmor(new ItemStack(ModItems.MAGIC_LEGGINGS.get(), 1), 36));
         event.getRareTrades().add(new EmeraldsForMagicArmor(new ItemStack(ModItems.MAGIC_CHESTPLATE.get(), 1), 36));
         event.getRareTrades().add(new EmeraldsForMagicArmor(new ItemStack(ModItems.MAGIC_HELMET.get(), 1), 36));
-
     }
 
     static class EmeraldsForMagicArmor implements VillagerTrades.ItemListing{

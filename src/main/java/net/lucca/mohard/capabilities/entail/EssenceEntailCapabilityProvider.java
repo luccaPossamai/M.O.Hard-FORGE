@@ -1,9 +1,10 @@
 package net.lucca.mohard.capabilities.entail;
 
 import net.lucca.mohard.capabilities.ModCapabilities;
+import net.lucca.mohard.init.ModBindings;
 import net.lucca.mohard.itens.essence.essenceEntails.EssenceEntail;
 import net.minecraft.core.Direction;
-import net.minecraft.nbt.*;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.ICapabilitySerializable;
 import net.minecraftforge.common.util.LazyOptional;
@@ -18,7 +19,7 @@ public class EssenceEntailCapabilityProvider implements ICapabilitySerializable<
     @Nonnull
     private EssenceEntailCapability getEntailCapability() {
         if (ENTAIL_CAPABILITY == null) {
-            ENTAIL_CAPABILITY = new EssenceEntailCapability(new EssenceEntail());
+            ENTAIL_CAPABILITY = new EssenceEntailCapability(ModBindings.EMPTY_BINDING.getEssenceEntail());
         }
         return ENTAIL_CAPABILITY;
     }
@@ -44,6 +45,7 @@ public class EssenceEntailCapabilityProvider implements ICapabilitySerializable<
 
     @Override
     public void deserializeNBT(CompoundTag nbt) {
-        this.getEntailCapability().setEntail(EssenceEntail.Helper.getEntailByName(nbt.getString("Entail")));
+        EssenceEntail entail = EssenceEntail.Helper.getEntailByName(nbt.getString("Entail"));
+        this.getEntailCapability().setEntail(entail);
     }
 }

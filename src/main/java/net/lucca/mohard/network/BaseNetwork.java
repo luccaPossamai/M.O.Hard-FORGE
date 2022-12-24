@@ -23,5 +23,10 @@ public class BaseNetwork {
                 .consumerMainThread(ServerboundHurtItemPacket::handle)
                 .encoder(ServerboundHurtItemPacket::encode)
                 .decoder(ServerboundHurtItemPacket::new).add();
+
+        CHANNEL.messageBuilder(ClientboundSetEntityDeltaMovementPacket.class, index++ , NetworkDirection.PLAY_TO_CLIENT)
+                .consumerMainThread(ClientboundSetEntityDeltaMovementPacket::handle)
+                .encoder(ClientboundSetEntityDeltaMovementPacket::encode)
+                .decoder(ClientboundSetEntityDeltaMovementPacket::new).add();
     }
 }

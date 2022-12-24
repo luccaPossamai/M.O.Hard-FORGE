@@ -1,0 +1,4 @@
+// 1.19.3	2022-12-13T05:08:37.8490807	Loot Tables
+5a3b27b3d242a693705360992c53303b58de74ec data/mohard/loot_tables/blocks/ender_altar.json
+b5af314b6f90260086aaa0e2606e60fd15382b78 data/mohard/loot_tables/blocks/essence_exchanger.json
+df3f0e7250e89c94237f5e65620ab6cb2c0a2992 data/mohard/loot_tables/entities/ice_isolator.json

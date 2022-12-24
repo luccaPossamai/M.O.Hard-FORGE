@@ -49,18 +49,20 @@ public class PlayerEvolution {
                 Map<Attribute, Double> essenceStats = essence.getEssenceData().essenceStats().getStats(upgradeLevel, negativeUpgradeLevel);
                 for (Attribute attribute : attributes) {
                     RangedAttribute att = (RangedAttribute) attribute;
-                    double valor = essenceStats.get(att) + statsForPlayer.get(attribute);
-                    statsForPlayer.put(attribute, Math.min(Math.max(att.getMinValue(), valor), att.getMaxValue()));
+                    double value = essenceStats.get(att) + statsForPlayer.get(attribute);
+                    statsForPlayer.put(attribute, Math.min(Math.max(att.getMinValue(), value), att.getMaxValue()));
 
                 }
             }
         }
         statsForPlayer.put(Attributes.MOVEMENT_SPEED, velocidade + (velocidade * statsForPlayer.get(ModAttributes.AGILITY) / 125));
-
+        updatePlayerHealth(player);
+        player.getCapability(ModCapabilities.ENTAIL_CAPABILITY).ifPresent(essenceEntailCapability -> essenceEntailCapability.getEntail().applyBonus(statsForPlayer));
         if(!player.isLocalPlayer()) {
             statsForPlayer.forEach((attribute, aDouble) -> player.getAttribute(attribute).setBaseValue(aDouble));
             LevelMechanic.updateserverLevel(player.level);
         }
+
     }
 
     @SubscribeEvent

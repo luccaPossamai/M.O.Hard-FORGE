@@ -1,8 +1,12 @@
 package net.lucca.mohard.itens.essence.essenceEntails;
 
 import net.lucca.mohard.init.ModBindings;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.player.Player;
+
+import java.util.Map;
 
 public class EssenceEntail {
 
@@ -15,12 +19,12 @@ public class EssenceEntail {
     public void getHit(float originalValue, float finalValue, Player player, LivingEntity livingEntity){
     }
 
-    public void dealHit(float originalValue, float finalValue, Player player, LivingEntity entityHurted){
+    public void dealHit(float originalValue, float finalValue, DamageSource damageSource, Player player, LivingEntity entityHurted){
     }
 
-    public double applyBonus(double value){
-        return 1;
+    public void applyBonus(Map<Attribute, Double> map){
     }
+
 
 
 

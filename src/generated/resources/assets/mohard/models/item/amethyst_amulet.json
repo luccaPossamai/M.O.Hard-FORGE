@@ -1,0 +1,26 @@
+{
+  "parent": "minecraft:item/handheld",
+  "overrides": [
+    {
+      "model": "mohard:item/amethyst_amulet_1",
+      "predicate": {
+        "mohard:binding": 1.0
+      }
+    },
+    {
+      "model": "mohard:item/amethyst_amulet_2",
+      "predicate": {
+        "mohard:binding": 2.0
+      }
+    },
+    {
+      "model": "mohard:item/amethyst_amulet_3",
+      "predicate": {
+        "mohard:binding": 3.0
+      }
+    }
+  ],
+  "textures": {
+    "layer0": "mohard:item/amethyst_amulet_0"
+  }
+}

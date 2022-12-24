@@ -1,8 +1,6 @@
 {
   "values": [
-    "mohard:vilio_altar",
-    "mohard:essence_exchanger",
-    "mohard:vilio_ore",
-    "mohard:deepslate_vilio_ore"
+    "mohard:ender_altar",
+    "mohard:essence_exchanger"
   ]
 }

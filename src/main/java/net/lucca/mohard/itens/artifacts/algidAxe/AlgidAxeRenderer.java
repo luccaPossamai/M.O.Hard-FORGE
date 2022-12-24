@@ -1,7 +1,7 @@
 package net.lucca.mohard.itens.artifacts.algidAxe;
 
 import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.math.Vector3f;
+import com.mojang.math.Axis;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.block.model.ItemTransforms;
 import net.minecraft.client.renderer.entity.EntityRenderer;
@@ -31,12 +31,12 @@ public class AlgidAxeRenderer extends EntityRenderer<ThrownAlgidAxe> {
             int rotation = (p_116085_.tickCount * 9) * p_116085_.getPower();
             p_116088_.pushPose();
             p_116088_.scale(this.scale, this.scale, this.scale);
-            p_116088_.mulPose(Vector3f.YP.rotationDegrees(Mth.lerp(p_116087_, p_116085_.yRotO, p_116085_.getYRot()) - 90.0F));
+            p_116088_.mulPose(Axis.YP.rotationDegrees(Mth.lerp(p_116087_, p_116085_.yRotO, p_116085_.getYRot()) - 90.0F));
             if(!p_116085_.inGround() && !p_116085_.isNoGravity()){
-                p_116088_.mulPose(Vector3f.ZP.rotationDegrees(Mth.lerp(p_116087_, p_116085_.xRotO, p_116085_.getXRot()) - rotation));
+                p_116088_.mulPose(Axis.ZP.rotationDegrees(Mth.lerp(p_116087_, p_116085_.xRotO, p_116085_.getXRot()) - rotation));
                 p_116085_.setLastRotation(rotation);
             } else {
-                p_116088_.mulPose(Vector3f.ZP.rotationDegrees(Mth.lerp(p_116087_, p_116085_.xRotO, p_116085_.getXRot()) - p_116085_.getLastRotation()));
+                p_116088_.mulPose(Axis.ZP.rotationDegrees(Mth.lerp(p_116087_, p_116085_.xRotO, p_116085_.getXRot()) - p_116085_.getLastRotation()));
             }
 
             this.itemRenderer.renderStatic(p_116085_.getPickupItem(), ItemTransforms.TransformType.FIXED, p_116090_, OverlayTexture.NO_OVERLAY, p_116088_, p_116089_, p_116085_.getId());

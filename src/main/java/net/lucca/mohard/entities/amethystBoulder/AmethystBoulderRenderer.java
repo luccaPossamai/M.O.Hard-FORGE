@@ -2,7 +2,7 @@ package net.lucca.mohard.entities.amethystBoulder;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import com.mojang.math.Vector3f;
+import com.mojang.math.Axis;
 import net.lucca.mohard.ModMain;
 import net.lucca.mohard.init.ModModelLayers;
 import net.minecraft.client.renderer.MultiBufferSource;
@@ -24,16 +24,12 @@ public class AmethystBoulderRenderer extends EntityRenderer<AmethystBoulder> {
 
     @Override
     public void render(AmethystBoulder p_114080_, float p_114081_, float p_114082_, PoseStack p_114083_, MultiBufferSource p_114084_, int p_114085_) {
-        int size = p_114080_.getSize();
-        this.shadowRadius = 0.35F * size;
-
+        this.shadowRadius = 0.23F;
         p_114083_.pushPose();
-        p_114083_.mulPose(Vector3f.YP.rotationDegrees(Mth.lerp(p_114082_, p_114080_.yRotO, p_114080_.getYRot()) - 90.0F));
-        p_114083_.mulPose(Vector3f.ZP.rotationDegrees(Mth.lerp(p_114082_, p_114080_.xRotO, p_114080_.getXRot())));
-        p_114083_.scale(-0.5F * size, -0.5F * size, 0.5F * size);
-        if(!p_114080_.inGround() && !p_114080_.isNoGravity()) {
-            this.model.setupAnim(p_114080_, p_114082_, 0, 0, 0, p_114080_.getTicksSinceLastKick());
-        }
+        p_114083_.mulPose(Axis.YP.rotationDegrees(Mth.lerp(p_114082_, p_114080_.yRotO, p_114080_.getYRot()) - 90.0F));
+        p_114083_.mulPose(Axis.ZP.rotationDegrees(Mth.lerp(p_114082_, p_114080_.xRotO, p_114080_.getXRot())));
+        p_114083_.scale(-1F, -1F, 1F);
+        this.model.setupAnim(p_114080_, p_114082_, 0, 0, 0, p_114080_.getTicksFrozen());
         VertexConsumer vertexconsumer = p_114084_.getBuffer(this.model.renderType(TEXTURE_LOCATION));
         this.model.renderToBuffer(p_114083_, vertexconsumer, p_114085_, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
         p_114083_.popPose();

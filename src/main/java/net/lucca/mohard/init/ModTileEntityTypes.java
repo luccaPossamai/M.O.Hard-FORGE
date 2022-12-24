@@ -14,7 +14,7 @@ public class ModTileEntityTypes {
     public static final DeferredRegister<BlockEntityType<?>> TILE_ENTITIES = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, ModMain.MODID);
 
     public static final RegistryObject<BlockEntityType<AltarTileEntity>> ALTAR = TILE_ENTITIES.register("altar", () ->
-            BlockEntityType.Builder.of(AltarTileEntity::new, ModBlocks.VILIO_ALTAR.get()).build(null)
+            BlockEntityType.Builder.of(AltarTileEntity::new, ModBlocks.ENDER_ALTAR.get()).build(null)
     );
 
     public static final RegistryObject<BlockEntityType<EssenceExchangerTileEntity>> ESSENCE_EXCHANGER = TILE_ENTITIES.register("essence_exchanger", () ->

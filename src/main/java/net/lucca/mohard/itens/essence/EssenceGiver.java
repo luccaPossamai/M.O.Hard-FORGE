@@ -83,12 +83,12 @@ public class EssenceGiver {
     }
 
     public EssenceGiver withNegativeUpgradeLevel(int i){
-        this.negativeLevel = Mth.clamp(i, 0, 3);
+        this.negativeLevel = Mth.clamp(i, 0, 5);
         return this;
     }
 
     public EssenceGiver withPositiveUpgradesLevel(int i){
-        this.upgradeLevel = Mth.clamp(i, 0, 3);
+        this.upgradeLevel = Mth.clamp(i, 0, 5);
         return this;
     }
 

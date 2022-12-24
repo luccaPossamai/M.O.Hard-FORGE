@@ -1,20 +1,15 @@
 package net.lucca.mohard.gui.altar;
 
-import net.lucca.mohard.util.mechanics.evolution.PlayerEvolution;
-import net.lucca.mohard.util.help.Methods;
-import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.systems.RenderSystem;
+import com.mojang.blaze3d.vertex.PoseStack;
+import net.lucca.mohard.util.help.Methods;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.components.AbstractWidget;
-import net.minecraft.client.gui.components.Widget;
 import net.minecraft.client.gui.narration.NarrationElementOutput;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ItemStack;
+import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.core.NonNullList;
 import net.minecraft.resources.ResourceLocation;
-
-import java.util.ArrayList;
-import java.util.List;
+import net.minecraft.world.item.ItemStack;
 
 public class AltarButton extends AbstractWidget {
 
@@ -28,14 +23,16 @@ public class AltarButton extends AbstractWidget {
 
     @Override
     public void renderButton(PoseStack p_230431_1_, int p_230431_2_, int p_230431_3_, float p_230431_4_) {
-        Minecraft minecraft = Minecraft.getInstance(); RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
+        Minecraft minecraft = Minecraft.getInstance();
+        RenderSystem.setShader(GameRenderer::getPositionTexShader);
+        RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
         RenderSystem.setShaderTexture(0, ALTAR_GUI);
-        RenderSystem.clearColor(1.0F, 1.0F, 1.0F, this.alpha);
+        RenderSystem.enableBlend();
         int i = this.getYImage(this.isHovered);
         RenderSystem.enableBlend();
         RenderSystem.defaultBlendFunc();
         RenderSystem.enableDepthTest();
-        this.blit(p_230431_1_, this.x, this.y, 0, 176 + (i * 11), 11, 11);
+        this.blit(p_230431_1_, this.getX(), this.getY(), 176, (i * 11), 11, 11);
         this.renderBg(p_230431_1_, minecraft, p_230431_2_, p_230431_3_);
     }
 
@@ -48,10 +45,6 @@ public class AltarButton extends AbstractWidget {
         return 0;
     }
 
-    public void setPosition(int xPos, int yPos){
-        x = xPos;
-        y = yPos;
-    }
 
     @Override
     protected boolean isValidClickButton(int p_230987_1_) {
@@ -67,8 +60,9 @@ public class AltarButton extends AbstractWidget {
         this.screen.setShowingStats(!this.screen.isShowingStats());
     }
 
+
     @Override
-    public void updateNarration(NarrationElementOutput p_169152_) {
+    protected void updateWidgetNarration(NarrationElementOutput p_259858_) {
 
     }
 }

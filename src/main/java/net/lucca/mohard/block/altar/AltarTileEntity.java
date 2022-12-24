@@ -1,20 +1,19 @@
 package net.lucca.mohard.block.altar;
 
 import net.lucca.mohard.block.altar.GUI.AltarMenu;
-import net.lucca.mohard.capabilities.altar.AltarCapability;
 import net.lucca.mohard.capabilities.ModCapabilities;
+import net.lucca.mohard.capabilities.altar.AltarCapability;
 import net.lucca.mohard.init.ModTileEntityTypes;
 import net.minecraft.core.BlockPos;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.core.NonNullList;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.ContainerHelper;
+import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BaseContainerBlockEntity;
-import net.minecraft.core.NonNullList;
-import net.minecraft.network.chat.Component;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.items.IItemHandler;
 import org.jetbrains.annotations.NotNull;
 
 public class AltarTileEntity extends BaseContainerBlockEntity {
@@ -104,7 +103,6 @@ public class AltarTileEntity extends BaseContainerBlockEntity {
     public AltarCapability loadItems(Player player){
         return player.getCapability(ModCapabilities.ALTAR_CAPABILITY).orElse(new AltarCapability());
     }
-
 
 
 }

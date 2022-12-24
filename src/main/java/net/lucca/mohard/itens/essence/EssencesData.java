@@ -131,8 +131,8 @@ public class EssencesData {
             new EssenceStats( -1.0, 0.0, 0.0,
                     0.0, 0.0, 0.0, 3.0, 0.0));
     public static final EssenceData RAVAGER = new EssenceData(EntityType.RAVAGER,
-            new EssenceStats( 10.0, 5.0, 2.0,
-                    0.0, 0.0, 5.0, -1.0, 0.0));
+            new EssenceStats( 8.0, 8.0, 2.0,
+                    0.0, 0.0, 3.0, -3.0, 0.0));
     public static final EssenceData SALMON = new EssenceData(EntityType.SALMON,
             new EssenceStats( 0.0, 2.0, 0.0,
                     0.0, 1.0, 0.0, 0.0, 0.0 ));

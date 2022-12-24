@@ -1,5 +1,6 @@
 {
 
+
   "_comment": "CREATIVE TABS",
 
   "itemGroup.essences": "Essences",
@@ -13,6 +14,7 @@
   "entity.mohard.spiritual_nomad": "Spiritual Nomad",
   "entity.mohard.algid_axe": "Algid Axe",
   "entity.mohard.cold_fireball": "Cold Fireball",
+  "entity.mohard.amethyst_boulder": "Amethyst Boulder",
 
   "_comment4": "ATTRIBUTES",
 
@@ -30,6 +32,7 @@
 
   "vilio_altar": "Vilio Altar",
   "essence_exchanger": "Essence Exchanger",
+  "essence.stats.description":  "When in Ender Altar:",
   "essence.description.health":  "Health",
   "essence.description.melee_damage": "Melee Damage",
   "essence.description.raw_armor": "Raw Armor",
@@ -56,51 +59,19 @@
   "block.mohard.vilio_ore": "Vilio Ore",
   "block.mohard.deepslate_vilio_ore": "Deepslate Vilio Ore",
   "block.mohard.vilio_block": "Vilio Block",
-
-  "block.minecraft.banner.mohard.nomads.black": "Black Nomads Symbol",
-  "block.minecraft.banner.mohard.nomads.red": "Red Nomads Symbol",
-  "block.minecraft.banner.mohard.nomads.green": "Green Nomads Symbol",
-  "block.minecraft.banner.mohard.nomads.brown": "Brown Nomads Symbol",
-  "block.minecraft.banner.mohard.nomads.blue": "Blue Nomads Symbol",
-  "block.minecraft.banner.mohard.nomads.purple": "Purple Nomads Symbol",
-  "block.minecraft.banner.mohard.nomads.cyan": "Cyan Nomads Symbol",
-  "block.minecraft.banner.mohard.nomads.light_gray": "Light Gray Nomads Symbol",
-  "block.minecraft.banner.mohard.nomads.gray": "Gray Nomads Symbol",
-  "block.minecraft.banner.mohard.nomads.pink": "Pink Nomads Symbol",
-  "block.minecraft.banner.mohard.nomads.lime": "Lime Nomads Symbol",
-  "block.minecraft.banner.mohard.nomads.yellow": "Yellow Nomads Symbol",
-  "block.minecraft.banner.mohard.nomads.light_blue": "Light Blue Nomads Symbol",
-  "block.minecraft.banner.mohard.nomads.magenta": "Magenta Nomads Symbol",
-  "block.minecraft.banner.mohard.nomads.orange": "Orange Nomads Symbol",
-  "block.minecraft.banner.mohard.nomads.white": "White Nomads Symbol",
-
-  "block.minecraft.banner.mohard.essence.black": "Black Essence",
-  "block.minecraft.banner.mohard.essence.red": "Red Essence",
-  "block.minecraft.banner.mohard.essence.green": "Green Essence",
-  "block.minecraft.banner.mohard.essence.brown": "Brown Essence",
-  "block.minecraft.banner.mohard.essence.blue": "Blue Essence",
-  "block.minecraft.banner.mohard.essence.purple": "Purple Essence",
-  "block.minecraft.banner.mohard.essence.cyan": "Cyan Essence",
-  "block.minecraft.banner.mohard.essence.light_gray": "Light Gray Essence",
-  "block.minecraft.banner.mohard.essence.gray": "Gray Essence",
-  "block.minecraft.banner.mohard.essence.pink": "Pink Essence",
-  "block.minecraft.banner.mohard.essence.lime": "Lime Essence",
-  "block.minecraft.banner.mohard.essence.yellow": "Yellow Essence",
-  "block.minecraft.banner.mohard.essence.light_blue": "Light Blue Essence",
-  "block.minecraft.banner.mohard.essence.magenta": "Magenta Essence",
-  "block.minecraft.banner.mohard.essence.orange": "Orange Essence",
-  "block.minecraft.banner.mohard.essence.white": "White Essence",
-
+  "block.mohard.tender_obsidian": "Tender Obsidian",
 
   "_comment7": "ITEMS",
 
   "item.mohard.deep_nether_petrified_tome": "Deep Nether Petrified Tome",
   "item.mohard.heart_of_the_glowing_depths": "Heart of the Glowing Depths",
   "item.mohard.floyd_dagger": "Floyd Dagger",
-  "item.mohard.vilio_idol": "Vilio Idol",
   "item.mohard.algid_axe": "Algid Axe",
-  "item.mohard.cold_charge": "Cold Charge",
-  "item.mohard.wand": "Wand",
+  "item.mohard.soul_fire_charge": "Soul Fire Charge",
+  "item.mohard.amethyst_amulet": "Amethyst Amulet",
+  "item.mohard.soul_fireball_scepter": "Soul Fireball Scepter",
+  "item.mohard.totem_of_the_dead": "Totem of the Dead",
+  "item.mohard.wheel_of_the_unknown_god": "Wheel of the Unknown God",
 
   "item.mohard.magic_boots": "Magic Boots",
   "item.mohard.magic_leggings": "Magic Leggings",
@@ -156,6 +127,7 @@
   "death.attack.direct_magic.heart_of_the_glowing_depths": "%1$s was burned by %1$s's glowing depths sorcery",
   "death.attack.direct_magic.floyd_dagger": "%1$s was stabbed by %2$s",
   "death.attack.direct_magic.health_discharge": "%2$s was smothered by %1$s's resistance",
+  "death.attack.direct_magic.amethyst_boulder": "%1$s's big boulder crushed %2$s's head",
 
   "_comment10.1": "SUBTITLES",
 
@@ -167,7 +139,7 @@
   "life_steal.name":"Life Steal",
   "regeneration.name":"Regeneration",
   "health_discharge.name":"Health Discharge",
-  "ghost_recovery.name":"Ghost Recovery",
+  "glass_beast.name":"Glass Beast",
 
   "comment12": "SERVER MESSAGES",
 
@@ -178,10 +150,12 @@
   "comment98": "ADVANCEMENTS",
   "advancements.essentials.root.title": "An Essential Start",
   "advancements.essentials.root.description": "Acquire some Essences",
-  "advancements.essentials.vilio_ingot.title": "The Vile Olio",
-  "advancements.essentials.vilio_ingot.description": "Acquire Vilio Ingot",
-  "advancements.essentials.vilio_altar.title": "No Turning Back",
-  "advancements.essentials.vilio_altar.description": "Craft a Vilio Altar",
+  "advancements.essentials.blue_axolotl.title": "Blue Essence",
+  "advancements.essentials.blue_axolotl.description": "Acquire Blue Axolotl Essence",
+  "advancements.essentials.killer_bunny.title": "Very Harmful Essence",
+  "advancements.essentials.killer_bunny.description": "Acquire the Easter Essence",
+  "advancements.essentials.bruno.title": "Bruno",
+  "advancements.essentials.bruno.description": "The Reflection of the Lighter saved him",
 
   "comment99": "ESSENCES",
 
@@ -259,6 +233,7 @@
   "item.mohard.snow_golem_essence": "Snowman Essence",
   "item.mohard.allay_essence": "Allay Essence",
   "item.mohard.frog_essence": "Frog Essence",
+  "item.mohard.charged_creeper_essence": "Charged Creeper Essence",
 
   "item.mohard.ice_isolator_essence": "Ice Isolator Essence",
   "item.mohard.bruno_essence": "Bruno's Essence",

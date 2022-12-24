@@ -43,11 +43,6 @@ public class EssenceExchangerBlock extends BaseEntityBlock {
         return tileEntity;
     }
 
-    @Override
-    public void onPlace(BlockState p_60566_, Level p_60567_, BlockPos p_60568_, BlockState p_60569_, boolean p_60570_) {
-        super.onPlace(p_60566_, p_60567_, p_60568_, p_60569_, p_60570_);
-    }
-
     @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level p_152694_, BlockState p_152695_, BlockEntityType<T> p_152696_) {
@@ -62,7 +57,7 @@ public class EssenceExchangerBlock extends BaseEntityBlock {
         } else {
             BlockEntity tileentity = world.getBlockEntity(pos);
             if (tileentity instanceof EssenceExchangerTileEntity essenceExchangerTileEntity && player instanceof ServerPlayer) {
-                if(player.getItemInHand(p_60507_).is(ModItems.MELTED_VILIO.get()) &&
+                if(player.getItemInHand(p_60507_).is(ModItems.SOUL_FIRE_CHARGE.get()) &&
                 canBeCharged(p_60503_)) {
                     charge(world, pos);
                     player.getItemInHand(p_60507_).shrink(1);

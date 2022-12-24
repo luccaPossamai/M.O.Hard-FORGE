@@ -130,6 +130,7 @@ public class EssenceItem extends Item {
                     Map<Attribute, Double> doubleList = data.essenceStats().getStats(upgradeLevel, negativeUpgradeLevel);
                     Map<Attribute, Double> rawDoubleList = data.essenceStats().getStats(0, 0);
                     List<Attribute> attributes = Methods.getAttributes();
+                    tooltip.add(Component.translatable("essence.stats.description").withStyle(ChatFormatting.GRAY));
                     for (Attribute attribute : attributes) {
                         int index = attributes.indexOf(attribute);
                         ChatFormatting color = ChatFormatting.BLUE;
@@ -144,7 +145,7 @@ public class EssenceItem extends Item {
                         }
                         if (value != 0 || value != rawValue) {
                             String signal = value > 0 ? "+" : "";
-                            tooltip.add(Component.literal(signal + value + " ").withStyle(color).append(lista.get(index).withStyle(ChatFormatting.BLUE)));
+                            tooltip.add(Component.literal(" "+signal + value + " ").withStyle(color).append(lista.get(index).withStyle(ChatFormatting.BLUE)));
                         }
                     }
                 } else {

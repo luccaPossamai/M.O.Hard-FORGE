@@ -1,10 +1,9 @@
 package net.lucca.mohard.itens.artifacts.algidAxe;
 
-import net.lucca.mohard.itens.artifacts.MeleeCrittableArtifact;
-import net.lucca.mohard.itens.artifacts.GenericArtifact;
 import net.lucca.mohard.init.ModAttributes;
 import net.lucca.mohard.init.ModDamageSources;
-import net.lucca.mohard.init.ModItems;
+import net.lucca.mohard.itens.artifacts.GenericArtifact;
+import net.lucca.mohard.itens.artifacts.MeleeCrittableArtifact;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
@@ -22,6 +21,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
@@ -44,15 +44,15 @@ public class AlgidAxe extends GenericArtifact implements MeleeCrittableArtifact 
     }
 
     @Override
-    public boolean isValidRepairItem(ItemStack p_41134_, ItemStack p_41135_) {
-        return p_41135_.is(ModItems.RAW_VILIO.get());
+    public boolean isValidRepairItem(@NotNull ItemStack p_41134_, ItemStack p_41135_) {
+        return p_41135_.is(Items.BLUE_ICE);
     }
 
     @Override
-    public void releaseUsing(ItemStack item, Level world, LivingEntity entity, int tick) {
+    public void releaseUsing(@NotNull ItemStack item, @NotNull Level world, @NotNull LivingEntity entity, int tick) {
         if (entity instanceof Player player) {
             int i = this.getUseDuration(item) - tick;
-            if (i >= 10 && this.canCast(player, item) && player instanceof ServerPlayer) {
+            if (i >= 10 && this.canCast(player, item)) {
                 this.generateCooldown(player, item);
                 if (!world.isClientSide) {
                     this.generateCooldown(player, item, this.getBaseCooldown() / 3);
@@ -63,15 +63,12 @@ public class AlgidAxe extends GenericArtifact implements MeleeCrittableArtifact 
                     if (player.getAbilities().instabuild) {
                         thrownAxe.pickup = AbstractArrow.Pickup.CREATIVE_ONLY;
                     }
-
                     world.addFreshEntity(thrownAxe);
                     world.playSound((Player) null, thrownAxe, SoundEvents.ARMOR_EQUIP_IRON, SoundSource.PLAYERS, 1.0F, 1.0F);
                     if (!player.getAbilities().instabuild) {
                         player.getInventory().removeItem(item);
                     }
                 }
-
-
                 player.awardStat(Stats.ITEM_USED.get(this));
             }
 
@@ -86,7 +83,7 @@ public class AlgidAxe extends GenericArtifact implements MeleeCrittableArtifact 
     @Override
     public InteractionResultHolder<ItemStack> use(Level world, Player player, InteractionHand hand) {
         ItemStack itemstack = player.getItemInHand(hand);
-        if(canCast(player, itemstack) && player instanceof ServerPlayer) {
+        if(canCast(player, itemstack)) {
             player.startUsingItem(hand);
             return InteractionResultHolder.consume(itemstack);
         }

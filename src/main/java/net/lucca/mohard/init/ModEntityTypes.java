@@ -1,7 +1,7 @@
 package net.lucca.mohard.init;
 
 import net.lucca.mohard.ModMain;
-import net.lucca.mohard.entities.coldfireball.ColdFireball;
+import net.lucca.mohard.entities.coldfireball.SoulFireball;
 import net.lucca.mohard.entities.iceIsolator.IceIsolator;
 import net.lucca.mohard.entities.amethystBoulder.AmethystBoulder;
 import net.lucca.mohard.entities.villagers.nomad.SpiritualNomadEntity;
@@ -40,13 +40,13 @@ public class ModEntityTypes {
             .clientTrackingRange(4)
             .updateInterval(20).build("algid_axe"));
 
-    public static final RegistryObject<EntityType<ColdFireball>> COLD_FIREBALL = ENTITIES.register("cold_fireball", () ->
-            EntityType.Builder.<ColdFireball>of(ColdFireball::new, MobCategory.MISC)
+    public static final RegistryObject<EntityType<SoulFireball>> COLD_FIREBALL = ENTITIES.register("cold_fireball", () ->
+            EntityType.Builder.<SoulFireball>of(SoulFireball::new, MobCategory.MISC)
             .sized(0.3125F, 0.3125F).clientTrackingRange(4).updateInterval(10).build("cold_fireball"));
 
     public static final RegistryObject<EntityType<AmethystBoulder>> AMETHYST_BOULDER = ENTITIES.register("amethyst_boulder", () ->
             EntityType.Builder.<AmethystBoulder>of(AmethystBoulder::new, MobCategory.MISC)
-                    .sized(0.5F, 0.5F).clientTrackingRange(4).updateInterval(10).build("amethyst_boulder"));
+                    .sized(0.26F, 0.26F).clientTrackingRange(4).updateInterval(10).build("amethyst_boulder"));
 
 
 

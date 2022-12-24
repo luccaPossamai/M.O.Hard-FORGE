@@ -20,7 +20,8 @@ public class ModBindings {
     public static final EssenceEntailBinding LIFE_STEAL = binding("life_steal", new LifeStealEntail());
     public static final EssenceEntailBinding REGENERATION = binding("regeneration", new RegenerationEntail());
     public static final EssenceEntailBinding HEALTH_DISCHARGE = binding("health_discharge", new HealthDischargeEntail());
-    public static final EssenceEntailBinding GHOST_RECOVERY = binding("ghost_recovery", new GhostRecovery());
+    public static final EssenceEntailBinding GLASS_BEAST = binding("glass_beast", new GlassBeastEntail());
+    public static final EssenceEntailBinding MAGIC_INSPIRATION = binding("magic_inspiration", new MagicInspirationEntail());
 
     private static EssenceEntailBinding binding(String name, EssenceEntail entail){
         EssenceEntailBinding binding = new EssenceEntailBinding(entail, name);

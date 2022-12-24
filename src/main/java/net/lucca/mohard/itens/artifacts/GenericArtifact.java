@@ -68,7 +68,7 @@ public class GenericArtifact extends Item implements Vanishable {
     }
 
     protected boolean isEnabled(ItemStack p_41141_) {
-        return (p_41141_.getDamageValue()) < p_41141_.getMaxDamage() - 1;
+        return (p_41141_.getDamageValue()) < p_41141_.getMaxDamage() - 1 || !this.hasDurability;
     }
 
     @Override
@@ -139,7 +139,7 @@ public class GenericArtifact extends Item implements Vanishable {
                 .append(": " + getMagicMultiplier(null, item))
                 .withStyle(ChatFormatting.BLUE));
         if (Minecraft.getInstance().player != null) {
-            tooltip.add(Component.translatable(base + "cooldown").append(": " + this.getCooldown(Minecraft.getInstance().player, item, this.getBaseCooldown()) / 20 + "s").withStyle(ChatFormatting.BLUE));
+            tooltip.add(Component.translatable(base + "cooldown").append(": " + this.getCooldown(Minecraft.getInstance().player, item, this.getBaseCooldown()) / 20F + "s").withStyle(ChatFormatting.BLUE));
         }
     }
 

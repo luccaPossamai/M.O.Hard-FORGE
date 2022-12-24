@@ -8,6 +8,14 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
 
+/**
+ *   Used for already modified damage values. This means that the damage it's
+ *   not processed by the DamageEvents.generalDamage() method. If you want to
+ *   use an in-game entity attribute scaling damage source, use the vanilla methods instead.
+ *   Only use this when you already scale the damage with the attributes of the
+ *   entity that is causing the damage.
+ * */
+
 public class DirectEntityDamageSource extends EntityDamageSource {
 
     @Nullable
@@ -48,6 +56,7 @@ public class DirectEntityDamageSource extends EntityDamageSource {
         ALGID_AXE("algid_axe"),
         COLD_FIREBALL("cold_fireball"),
         HEALTH_DISCHARGE("health_discharge"),
+        AMETHYST_BOULDER("amethyst_boulder"),
         ;
 
         final String name;
